@@ -360,7 +360,6 @@ C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile
 C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\System.Xml.XDocument.dll
 C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\System.Xml.XmlDocument.dll
 C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\System.Xml.XmlSerializer.dll
-C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\obj\x86\Debug\Mobile_Application.csprojResolveAssemblyReference.cache
 C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\obj\x86\Debug\App.g.i.cs
 C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\obj\x86\Debug\App.g.cs
 C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\obj\x86\Debug\View\FavoriteDetails.g.i.cs
@@ -475,3 +474,6 @@ C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile
 C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\obj\x86\Debug\View\ModificationPage.xaml
 C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\obj\x86\Debug\View\ModificationPage.xbf
 C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\View\ModificationPage.xbf
+C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\NotificationsExtensions.winmd
+C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\obj\x86\Debug\NotificationsExtensions.pri.xml
+C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\obj\x86\Debug\Microsoft.Practices.ServiceLocation\en-US\Microsoft.Practices.ServiceLocation.Properties.Resources.resw

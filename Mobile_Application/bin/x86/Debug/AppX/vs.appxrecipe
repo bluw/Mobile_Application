@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>b9699291-36e6-475e-b156-c69fd186b038</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>5E8FFB81A8CCEFAEDCC7DCED85DF292D675EA67AFF9B6E90F2527C5DBA5A2A38</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>C3881873BA909228DA5F75A8D475B578363CDC024CE01D79C26CCF4435DFF266</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>b9699291-36e6-475e-b156-c69fd186b038_1.0.0.0_x86__kwmcxzszfer2y</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>b9699291-36e6-475e-b156-c69fd186b038_kwmcxzszfer2y!App</RegisteredUserModeAppID>
     <RegisteredPackageID>b9699291-36e6-475e-b156-c69fd186b038</RegisteredPackageID>
@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-01-07T14:07:57.789</Modified>
+      <Modified>2016-01-07T16:23:43.920</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\Mobile_Application.exe">
       <PackagePath>entrypoint\Mobile_Application.exe</PackagePath>
-      <Modified>2016-01-07T14:07:56.004</Modified>
+      <Modified>2016-01-07T16:23:38.985</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
@@ -474,6 +474,10 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-12-22T11:57:15.105</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\admin\.nuget\packages\NotificationsExtensions.Win10\10586.0.0\lib\uap10.0\NotificationsExtensions.winmd">
+      <PackagePath>NotificationsExtensions.winmd</PackagePath>
+      <Modified>2016-01-07T15:17:27.774</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
       <Modified>2015-12-27T16:16:06.956</Modified>
@@ -526,11 +530,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-01-07T14:07:57.467</Modified>
+      <Modified>2016-01-07T16:23:39.558</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\Core\Mobile_Application.exe">
       <PackagePath>Mobile_Application.exe</PackagePath>
-      <Modified>2016-01-07T14:07:57.786</Modified>
+      <Modified>2016-01-07T16:23:43.912</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

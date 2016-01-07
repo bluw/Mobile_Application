@@ -100,6 +100,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\EmailException.cs" />
+    <Compile Include="Exceptions\ErrorNomException.cs" />
+    <Compile Include="Exceptions\SizeOfKeyException.cs" />
     <Compile Include="Model\Algorithm.cs" />
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\Person.cs" />

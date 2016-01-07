@@ -34,7 +34,7 @@ namespace Mobile_Application.ViewModel
                 newUser.LastName = LastName;
                 newUser.KeyLength = ConvertKey();
                 newUser.KeyUsed = KeyUsed;
-                newUser.Company.NameCompany = CompanyName;
+                newUser.Company.NameCompany = FirstLetterToUpperCase(CompanyName);
                 newUser.TypeAlgo.Type = SelectedAlgorithm;
 
                 PersonService peopleService = new PersonService();
@@ -54,6 +54,19 @@ namespace Mobile_Application.ViewModel
             string cleanKey = Regex.Replace(KeyLength, @"[^\d]", "");
             return int.Parse(cleanKey);
         }
+
+        private string FirstLetterToUpperCase(string str)
+        {
+            if (string.IsNullOrEmpty(str)) {
+                return string.Empty;
+            }
+
+            char[] tabStr = str.ToCharArray();
+            tabStr[0] = char.ToUpper(tabStr[0]);
+
+            return new string(tabStr);
+        }
+
 
         public void OnNavigatedTo(NavigationEventArgs e)
         {

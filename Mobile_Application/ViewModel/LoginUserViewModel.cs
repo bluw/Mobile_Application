@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using Mobile_Application.Services;
+using NotificationsExtensions.Toasts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,10 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-
 
 namespace Mobile_Application.ViewModel
 {
@@ -37,14 +38,31 @@ namespace Mobile_Application.ViewModel
                     var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
                     localSettings.Values["Email"] = Email;
 
-                    GoDefaultPage();
+                    _navigationService.NavigateTo("FavoritePage");
 
                 } else {
-                    //wront email or password
+                    //wrong email or password
                 }
             } else {
-                // please enter email and password
+                ShowToast("please enter email and password");
             }
+        }
+
+
+        public void ShowToast(String value)
+        {
+            //var loader = 
+
+            ToastVisual visual = new ToastVisual() {
+                TitleText = new ToastText() {
+                    Text = value
+                },
+            };
+
+            ToastContent content = new ToastContent();
+            content.Visual = visual;
+            var toast = new ToastNotification(content.GetXml());
+            ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
 
         private ICommand _signIn;
@@ -74,11 +92,6 @@ namespace Mobile_Application.ViewModel
         private void GoSignUpPage()
         {
             _navigationService.NavigateTo("RegisterPage");
-        }
-
-        private void GoDefaultPage()
-        {
-            _navigationService.NavigateTo("FavoritePage");
         }
 
         public bool IsLogged { get; set; }

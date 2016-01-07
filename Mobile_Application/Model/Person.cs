@@ -1,28 +1,154 @@
-﻿using System;
+﻿using Mobile_Application.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+
 
 namespace Mobile_Application.Model
 {
     public class Person
     {
-        public string LastName { get; set; }
+        private string lastName;
+        private string firstName;
+        private int keyLength;
+        private string keyUsed;
+        private string email;
+        private string password;
+        private Algorithm typeAlgo;
+        private Company company;
 
-        public string FirstName { get; set; }
+        public string LastName
+        {
+            get
+            {
+                return lastName;
+            }
 
-        public int KeyLength { get; set; }
+            set
+            {
+                Regex rgx = new Regex("\\p{L}*(-\\p{L}*)*");
+                if (rgx.IsMatch(value)) {
+                    lastName = value;
+                } else {
+                    var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+                    string str = loader.GetString("ErrorNomPrenom");
+                    throw new ErrorNomException(str);
+                }
+            }
+        }
 
-        public string KeyUsed { get; set; }
+        public string FirstName
+        {
+            get
+            {
+                return firstName;
+            }
 
-        public string Email { get; set; }
+            set
+            {
+                Regex rgx = new Regex("\\p{L}*(-\\p{L}*)*");
+                if (rgx.IsMatch(value)) {
+                    firstName = value;
+                } else {
+                    var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+                    string str = loader.GetString("ErrorNomPrenom");
+                    throw new ErrorNomException(str);
+                }
+            }
+        }
 
-        public string Password { get; set; }
+        public int KeyLength
+        {
+            get
+            {
+                return keyLength;
+            }
 
-        public Algorithm TypeAlgo { get; set; }
+            set
+            {
+                if (value < 128) {
+                    keyLength = value;
+                } else {
+                    var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+                    string str = loader.GetString("keyTooShort");
+                    throw new SizeOfKeyException(str);
+                }
+            }
+        }
 
-        public Company Company { get; set; }
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+
+            set
+            {
+                if (value.Contains("@") && value.Contains(".")) {
+                    email = value;
+                } else {
+                    var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+                    string str = loader.GetString("notAMailAdress");
+                    throw new EmailException(str);
+                }
+            }
+        }
+
+        public string KeyUsed
+        {
+            get
+            {
+                return keyUsed;
+            }
+
+            set
+            {
+                keyUsed = value;
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+
+            set
+            {
+                password = value;
+            }
+        }
+
+        public Algorithm TypeAlgo
+        {
+            get
+            {
+                return typeAlgo;
+            }
+
+            set
+            {
+                typeAlgo = value;
+            }
+        }
+
+        public Company Company
+        {
+            get
+            {
+                return company;
+            }
+
+            set
+            {
+                company = value;
+            }
+        }
 
         public Person()
         {

@@ -22,7 +22,7 @@ namespace Mobile_Application.Services
         }
 
 
-        public async Task AddFavoriteAsync(string email, string emailFavorite)
+        public async Task<bool> AddFavoriteAsync(string email, string emailFavorite)
         {
             HttpClient client = new HttpClient();
 
@@ -31,6 +31,8 @@ namespace Mobile_Application.Services
             HttpContent content = new StringContent(linkForPost, Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = await client.PostAsync("http://keyregisterweb.azurewebsites.net/api/people/addFavorite/?email=" + email + "&emailFavorite=" + emailFavorite, content);
+
+            return response.IsSuccessStatusCode;
         }
 
 

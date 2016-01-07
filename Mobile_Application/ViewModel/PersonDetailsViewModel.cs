@@ -37,10 +37,16 @@ namespace Mobile_Application.ViewModel
 
             if (email != personCliked.Email) {
  
-                await service.AddFavoriteAsync(email, personCliked.Email);
-                _navigationService.NavigateTo("FavoriteDetails", personCliked);
+                bool isCreated = await service.AddFavoriteAsync(email, personCliked.Email);
+                
+                if (isCreated) {
+                    _navigationService.NavigateTo("FavoriteDetails", personCliked);
+                } else {
+                    //show error link already exist
+                }
     
             } else {
+
                 //show message si il veut sajouter lui meme en favoris
             }
         }

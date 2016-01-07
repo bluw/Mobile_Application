@@ -10,7 +10,7 @@ namespace Mobile_Application.Services
 {
     class PersonService
     { 
-        public async Task AddPersonAsync(Person newPerson) // controle: mettre les premieres lettre en maj 
+        public async Task AddPersonAsync(Person newPerson)
         {
             HttpClient client = new HttpClient();
 
@@ -42,7 +42,7 @@ namespace Mobile_Application.Services
         }
 
 
-        public async Task<Person[]> searchPersonByCompanyAsync(string nameCompany) // controle: mettre la premiere lettre en maj 
+        public async Task<Person[]> searchPersonByCompanyAsync(string nameCompany)
         {
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync("http://keyregisterweb.azurewebsites.net/api/people/searchPersonByCompany/?nameCompany=" + nameCompany);
@@ -53,7 +53,7 @@ namespace Mobile_Application.Services
         }
 
 
-        public async Task<Person[]> searchPersonByNameAsync(string name) // controle: mettre la premiere lettre en maj 
+        public async Task<Person[]> searchPersonByNameAsync(string name)
         {
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync("http://keyregisterweb.azurewebsites.net/api/people/searchPersonByName/?lastName=" + name);

@@ -39,6 +39,9 @@ namespace Mobile_Application.ViewModel
                     var person = await service.getDetailsPersonAsync(Input);
                     ListPerson[0] = person;
                 } else {
+
+                    Input = FirstLetterToUpperCase(Input);
+
                     if (NameChecked) {
                         ListPerson = await service.searchPersonByNameAsync(Input);
                     } else {
@@ -52,6 +55,19 @@ namespace Mobile_Application.ViewModel
                 //show message search not found
                 
             }
+        }
+
+
+        private string FirstLetterToUpperCase(string str)
+        {
+            if (string.IsNullOrEmpty(str)) {
+                return string.Empty;
+            }
+
+            char[] tabStr = str.ToCharArray();
+            tabStr[0] = char.ToUpper(tabStr[0]);
+
+            return new string(tabStr);
         }
 
         public void Company_Checked_change()
