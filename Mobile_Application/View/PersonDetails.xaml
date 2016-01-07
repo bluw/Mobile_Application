@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="Mobile_Application.View.PersonDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Mobile_Application.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Source={StaticResource Locator}, Path=PersonDetails}"
+    >
+    
+    <Page.BottomAppBar>
+        <CommandBar  x:Name="appBar">
+            <AppBarButton x:Name="Account" Icon="Account" Command="{Binding Account}"/>
+            <AppBarButton x:Name="Search" Icon="PhoneBook" Command="{Binding Search}"/>
+            <AppBarButton x:Name="Favorite" Icon="Contact" Command="{Binding GoFavorite}"/>
+            <AppBarButton x:Name="AddPerson" Icon="Favorite" Command="{Binding AddFavorite}"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="380"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="{Binding personCliked.LastName}" Grid.Row="1" Grid.Column="0" FontSize="34" />
+        <TextBlock Text="{Binding personCliked.FirstName}" Grid.Row="1" Grid.Column="1" FontSize="34" />
+        <TextBlock Text="{Binding personCliked.Email}" Grid.Row="3" Grid.Column="1"/>
+
+    </Grid>
+</Page>
