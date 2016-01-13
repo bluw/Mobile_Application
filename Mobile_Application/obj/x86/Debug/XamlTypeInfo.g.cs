@@ -138,12 +138,12 @@ namespace Mobile_Application.Mobile_Application_XamlTypeInfo
             _typeNameTable[2] = "Mobile_Application.ViewModel.LoginUserViewModel";
             _typeNameTable[3] = "GalaSoft.MvvmLight.ViewModelBase";
             _typeNameTable[4] = "GalaSoft.MvvmLight.ObservableObject";
-            _typeNameTable[5] = "Mobile_Application.ViewModel.AddClientViewModel";
-            _typeNameTable[6] = "Mobile_Application.ViewModel.SearchViewModel";
-            _typeNameTable[7] = "Mobile_Application.ViewModel.SearchListViewModel";
-            _typeNameTable[8] = "Mobile_Application.ViewModel.FavoritesViewModel";
-            _typeNameTable[9] = "Mobile_Application.ViewModel.PersonDetailsViewModel";
-            _typeNameTable[10] = "Mobile_Application.ViewModel.AccountViewModel";
+            _typeNameTable[5] = "Mobile_Application.ViewModel.SearchViewModel";
+            _typeNameTable[6] = "Mobile_Application.ViewModel.SearchListViewModel";
+            _typeNameTable[7] = "Mobile_Application.ViewModel.FavoritesViewModel";
+            _typeNameTable[8] = "Mobile_Application.ViewModel.PersonDetailsViewModel";
+            _typeNameTable[9] = "Mobile_Application.ViewModel.AccountViewModel";
+            _typeNameTable[10] = "Mobile_Application.ViewModel.AddClientViewModel";
             _typeNameTable[11] = "Mobile_Application.ViewModel.ModificationsViewModel";
             _typeNameTable[12] = "Mobile_Application.View.Account";
             _typeNameTable[13] = "Windows.UI.Xaml.Controls.Page";
@@ -163,12 +163,12 @@ namespace Mobile_Application.Mobile_Application_XamlTypeInfo
             _typeTable[2] = typeof(global::Mobile_Application.ViewModel.LoginUserViewModel);
             _typeTable[3] = typeof(global::GalaSoft.MvvmLight.ViewModelBase);
             _typeTable[4] = typeof(global::GalaSoft.MvvmLight.ObservableObject);
-            _typeTable[5] = typeof(global::Mobile_Application.ViewModel.AddClientViewModel);
-            _typeTable[6] = typeof(global::Mobile_Application.ViewModel.SearchViewModel);
-            _typeTable[7] = typeof(global::Mobile_Application.ViewModel.SearchListViewModel);
-            _typeTable[8] = typeof(global::Mobile_Application.ViewModel.FavoritesViewModel);
-            _typeTable[9] = typeof(global::Mobile_Application.ViewModel.PersonDetailsViewModel);
-            _typeTable[10] = typeof(global::Mobile_Application.ViewModel.AccountViewModel);
+            _typeTable[5] = typeof(global::Mobile_Application.ViewModel.SearchViewModel);
+            _typeTable[6] = typeof(global::Mobile_Application.ViewModel.SearchListViewModel);
+            _typeTable[7] = typeof(global::Mobile_Application.ViewModel.FavoritesViewModel);
+            _typeTable[8] = typeof(global::Mobile_Application.ViewModel.PersonDetailsViewModel);
+            _typeTable[9] = typeof(global::Mobile_Application.ViewModel.AccountViewModel);
+            _typeTable[10] = typeof(global::Mobile_Application.ViewModel.AddClientViewModel);
             _typeTable[11] = typeof(global::Mobile_Application.ViewModel.ModificationsViewModel);
             _typeTable[12] = typeof(global::Mobile_Application.View.Account);
             _typeTable[13] = typeof(global::Windows.UI.Xaml.Controls.Page);
@@ -241,12 +241,12 @@ namespace Mobile_Application.Mobile_Application_XamlTypeInfo
                 userType = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_0_ViewModelLocator;
                 userType.AddMemberName("Login");
-                userType.AddMemberName("Register");
                 userType.AddMemberName("Search");
                 userType.AddMemberName("SearchList");
                 userType.AddMemberName("Favorite");
                 userType.AddMemberName("PersonDetails");
                 userType.AddMemberName("Account");
+                userType.AddMemberName("Register");
                 userType.AddMemberName("Modifications");
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -274,42 +274,42 @@ namespace Mobile_Application.Mobile_Application_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 5:   //  Mobile_Application.ViewModel.AddClientViewModel
+            case 5:   //  Mobile_Application.ViewModel.SearchViewModel
                 userType = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  Mobile_Application.ViewModel.SearchViewModel
+            case 6:   //  Mobile_Application.ViewModel.SearchListViewModel
                 userType = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  Mobile_Application.ViewModel.SearchListViewModel
+            case 7:   //  Mobile_Application.ViewModel.FavoritesViewModel
                 userType = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  Mobile_Application.ViewModel.FavoritesViewModel
+            case 8:   //  Mobile_Application.ViewModel.PersonDetailsViewModel
                 userType = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  Mobile_Application.ViewModel.PersonDetailsViewModel
+            case 9:   //  Mobile_Application.ViewModel.AccountViewModel
                 userType = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  Mobile_Application.ViewModel.AccountViewModel
+            case 10:   //  Mobile_Application.ViewModel.AddClientViewModel
                 userType = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ViewModelBase"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
@@ -403,35 +403,35 @@ namespace Mobile_Application.Mobile_Application_XamlTypeInfo
             var that = (global::Mobile_Application.ViewModel.ViewModelLocator)instance;
             return that.Login;
         }
-        private object get_1_ViewModelLocator_Register(object instance)
-        {
-            var that = (global::Mobile_Application.ViewModel.ViewModelLocator)instance;
-            return that.Register;
-        }
-        private object get_2_ViewModelLocator_Search(object instance)
+        private object get_1_ViewModelLocator_Search(object instance)
         {
             var that = (global::Mobile_Application.ViewModel.ViewModelLocator)instance;
             return that.Search;
         }
-        private object get_3_ViewModelLocator_SearchList(object instance)
+        private object get_2_ViewModelLocator_SearchList(object instance)
         {
             var that = (global::Mobile_Application.ViewModel.ViewModelLocator)instance;
             return that.SearchList;
         }
-        private object get_4_ViewModelLocator_Favorite(object instance)
+        private object get_3_ViewModelLocator_Favorite(object instance)
         {
             var that = (global::Mobile_Application.ViewModel.ViewModelLocator)instance;
             return that.Favorite;
         }
-        private object get_5_ViewModelLocator_PersonDetails(object instance)
+        private object get_4_ViewModelLocator_PersonDetails(object instance)
         {
             var that = (global::Mobile_Application.ViewModel.ViewModelLocator)instance;
             return that.PersonDetails;
         }
-        private object get_6_ViewModelLocator_Account(object instance)
+        private object get_5_ViewModelLocator_Account(object instance)
         {
             var that = (global::Mobile_Application.ViewModel.ViewModelLocator)instance;
             return that.Account;
+        }
+        private object get_6_ViewModelLocator_Register(object instance)
+        {
+            var that = (global::Mobile_Application.ViewModel.ViewModelLocator)instance;
+            return that.Register;
         }
         private object get_7_ViewModelLocator_Modifications(object instance)
         {
@@ -452,40 +452,40 @@ namespace Mobile_Application.Mobile_Application_XamlTypeInfo
                 xamlMember.Getter = get_0_ViewModelLocator_Login;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "Mobile_Application.ViewModel.ViewModelLocator.Register":
-                userType = (global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mobile_Application.ViewModel.ViewModelLocator");
-                xamlMember = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlMember(this, "Register", "Mobile_Application.ViewModel.AddClientViewModel");
-                xamlMember.Getter = get_1_ViewModelLocator_Register;
-                xamlMember.SetIsReadOnly();
-                break;
             case "Mobile_Application.ViewModel.ViewModelLocator.Search":
                 userType = (global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mobile_Application.ViewModel.ViewModelLocator");
                 xamlMember = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlMember(this, "Search", "Mobile_Application.ViewModel.SearchViewModel");
-                xamlMember.Getter = get_2_ViewModelLocator_Search;
+                xamlMember.Getter = get_1_ViewModelLocator_Search;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Mobile_Application.ViewModel.ViewModelLocator.SearchList":
                 userType = (global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mobile_Application.ViewModel.ViewModelLocator");
                 xamlMember = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlMember(this, "SearchList", "Mobile_Application.ViewModel.SearchListViewModel");
-                xamlMember.Getter = get_3_ViewModelLocator_SearchList;
+                xamlMember.Getter = get_2_ViewModelLocator_SearchList;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Mobile_Application.ViewModel.ViewModelLocator.Favorite":
                 userType = (global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mobile_Application.ViewModel.ViewModelLocator");
                 xamlMember = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlMember(this, "Favorite", "Mobile_Application.ViewModel.FavoritesViewModel");
-                xamlMember.Getter = get_4_ViewModelLocator_Favorite;
+                xamlMember.Getter = get_3_ViewModelLocator_Favorite;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Mobile_Application.ViewModel.ViewModelLocator.PersonDetails":
                 userType = (global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mobile_Application.ViewModel.ViewModelLocator");
                 xamlMember = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlMember(this, "PersonDetails", "Mobile_Application.ViewModel.PersonDetailsViewModel");
-                xamlMember.Getter = get_5_ViewModelLocator_PersonDetails;
+                xamlMember.Getter = get_4_ViewModelLocator_PersonDetails;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Mobile_Application.ViewModel.ViewModelLocator.Account":
                 userType = (global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mobile_Application.ViewModel.ViewModelLocator");
                 xamlMember = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlMember(this, "Account", "Mobile_Application.ViewModel.AccountViewModel");
-                xamlMember.Getter = get_6_ViewModelLocator_Account;
+                xamlMember.Getter = get_5_ViewModelLocator_Account;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Mobile_Application.ViewModel.ViewModelLocator.Register":
+                userType = (global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Mobile_Application.ViewModel.ViewModelLocator");
+                xamlMember = new global::Mobile_Application.Mobile_Application_XamlTypeInfo.XamlMember(this, "Register", "Mobile_Application.ViewModel.AddClientViewModel");
+                xamlMember.Getter = get_6_ViewModelLocator_Register;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Mobile_Application.ViewModel.ViewModelLocator.Modifications":

@@ -29,14 +29,15 @@ namespace Mobile_Application.ViewModel
 
         private async void SubmitClick()
         {
-            if (CanExecute()) {
+            try {
 
-                if (Password.Equals(PasswordCheck)) {
+                string encryptedPassword = PasswordManager();
+
+                if (CanExecute()) {
 
                     try {
                         Person newUser = new Person();
                         newUser.Email = Email;
-                        string encryptedPassword = MyCrypt(Password);
                         newUser.Password = encryptedPassword;
                         newUser.FirstName = FirstName;
                         newUser.LastName = LastName;
@@ -46,18 +47,19 @@ namespace Mobile_Application.ViewModel
                         newUser.TypeAlgo.Type = SelectedAlgorithm;
 
                         PersonService peopleService = new PersonService();
-                        await peopleService.AddPersonAsync(newUser);
+                        await peopleService.UpdatePersonAsync(newUser);
 
                         //return to favorite page
                         _navigationService.NavigateTo("FavoritePage");
                     } catch (Exception e) {
                         ShowToast(e.ToString());
                     }
-
-                } else {
-                    ShowToast("not_same_password");
                 }
+
+            } catch (Exception e) {
+                ShowToast("not_same_password");
             }
+ 
         }
 
 
@@ -77,6 +79,59 @@ namespace Mobile_Application.ViewModel
         private string MyCrypt(string password)
         {
             return password;
+        }
+
+
+        private string PasswordManager()
+        {
+            string encryptedPassword;
+
+            if (NewPasswordEntered()) {
+                if (EqualsdOldPassword()) {
+                    if (EqualsNewPassword()) {
+                        encryptedPassword = MyCrypt(NewPassword);
+                    } else {
+                        throw new Exception();
+                    }
+                } else {
+                    throw new Exception();
+                }
+
+            } else {
+                encryptedPassword = Password;
+            }
+
+            return encryptedPassword;
+        }
+
+
+        private bool NewPasswordEntered()
+        {
+            if (NewPassword != null && PasswordCheck != null) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        private bool EqualsdOldPassword()
+        {
+            string encryptedPasswd = MyCrypt(OldPassword);
+
+            if (encryptedPasswd.Equals(Password)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        private bool EqualsNewPassword()
+        {
+            if (NewPassword.Equals(PasswordCheck)) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
 
@@ -111,11 +166,13 @@ namespace Mobile_Application.ViewModel
         private void LoadInfo(Person user)
         {
             Email = user.Email;
+            Password = user.Password;
             FirstName = user.FirstName;
             LastName = user.LastName;
             KeyLength = user.KeyLength.ToString();
             KeyUsed = user.KeyUsed;
             CompanyName = user.Company.NameCompany;
+            SelectedAlgorithm = user.TypeAlgo.Type;
         }
 
 
@@ -125,7 +182,7 @@ namespace Mobile_Application.ViewModel
 
             ToastVisual visual = new ToastVisual() {
                 TitleText = new ToastText() {
-                    Text = value
+                    Text = loader.GetString(value)
                 },
             };
 
@@ -137,7 +194,7 @@ namespace Mobile_Application.ViewModel
 
         private Boolean CanExecute()
         {
-            if (Email == null || Password == null || PasswordCheck == null || FirstName == null || LastName == null || KeyLength == null || KeyUsed == null || CompanyName == null || SelectedAlgorithm == null) {
+            if (KeyLength == null || KeyUsed == null || CompanyName == null || SelectedAlgorithm == null) {
                 return false;
             }
 
@@ -147,15 +204,15 @@ namespace Mobile_Application.ViewModel
 
         /* Navigation command */
 
-        private ICommand _register;
-        public ICommand Register
+        private ICommand _submit;
+        public ICommand Submit
         {
             get
             {
-                if (_register == null) {
-                    _register = new RelayCommand(() => SubmitClick());
+                if (_submit == null) {
+                    _submit = new RelayCommand(() => SubmitClick());
                 }
-                return _register;
+                return _submit;
             }
         }
 
@@ -187,6 +244,28 @@ namespace Mobile_Application.ViewModel
             {
                 _email = value;
                 RaisePropertyChanged("Email");
+            }
+        }
+
+        private string _oldPassword;
+        public string OldPassword
+        {
+            get { return _oldPassword; }
+            set
+            {
+                _oldPassword = value;
+                RaisePropertyChanged("OldPassword");
+            }
+        }
+
+        private string _newPassword;
+        public string NewPassword
+        {
+            get { return _newPassword; }
+            set
+            {
+                _newPassword = value;
+                RaisePropertyChanged("NewPassword");
             }
         }
 

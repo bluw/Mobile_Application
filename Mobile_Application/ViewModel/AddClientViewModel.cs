@@ -117,7 +117,7 @@ namespace Mobile_Application.ViewModel
 
             ToastVisual visual = new ToastVisual() {
                 TitleText = new ToastText() {
-                    Text = value
+                    Text = loader.GetString(value)
                 },
             };
 
@@ -140,15 +140,15 @@ namespace Mobile_Application.ViewModel
 
         /* Navigation command */
 
-        private ICommand _register;
-        public ICommand Register
+        private ICommand _submit;
+        public ICommand Submit
         {
             get
             {
-                if (_register == null) {
-                    _register = new RelayCommand(() => RegisterClick());
+                if (_submit == null) {
+                    _submit = new RelayCommand(() => RegisterClick());
                 }
-                return _register;
+                return _submit;
             }
         }
 

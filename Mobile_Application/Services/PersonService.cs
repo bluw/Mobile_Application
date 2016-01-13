@@ -27,7 +27,7 @@ namespace Mobile_Application.Services
             var newPersonJSON = Newtonsoft.Json.JsonConvert.SerializeObject(newPerson);
             HttpContent content = new StringContent(newPersonJSON, Encoding.UTF8, "application/json");
 
-            HttpResponseMessage response = await client.PutAsync("http://keyregisterweb.azurewebsites.net/api/people/addPerson", content);
+            HttpResponseMessage response = await client.PutAsync("http://keyregisterweb.azurewebsites.net/api/people/updatePerson/?email=" + newPerson.Email, content);
         }
 
 
