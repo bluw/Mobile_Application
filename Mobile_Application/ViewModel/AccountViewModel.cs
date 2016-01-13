@@ -24,10 +24,12 @@ namespace Mobile_Application.ViewModel
             _navigationService = navigationService;
         }
 
+
         public void OnNavigatedTo()
         {
             loadUser();
         }
+
 
         private async void loadUser()
         {
@@ -37,6 +39,9 @@ namespace Mobile_Application.ViewModel
             PersonService service = new PersonService();
             User = await service.getDetailsPersonAsync(email);
         }
+
+
+        /* Navigation command & event handling */
 
         private ICommand _search;
         public ICommand Search
@@ -93,6 +98,7 @@ namespace Mobile_Application.ViewModel
         {
             _navigationService.NavigateTo("ModificationPage", User);
         }
+
 
         public Person User { get; set; }    
     }

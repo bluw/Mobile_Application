@@ -69,7 +69,7 @@ namespace Mobile_Application.Model
 
             set
             {
-                if (value < 128) {
+                if (value >= 128) {
                     keyLength = value;
                 } else {
                     var loader = new Windows.ApplicationModel.Resources.ResourceLoader();

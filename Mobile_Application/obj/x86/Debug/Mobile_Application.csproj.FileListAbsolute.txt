@@ -477,3 +477,4 @@ C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile
 C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\NotificationsExtensions.winmd
 C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\obj\x86\Debug\NotificationsExtensions.pri.xml
 C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\obj\x86\Debug\Microsoft.Practices.ServiceLocation\en-US\Microsoft.Practices.ServiceLocation.Properties.Resources.resw
+C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\obj\x86\Debug\Mobile_Application.csprojResolveAssemblyReference.cache

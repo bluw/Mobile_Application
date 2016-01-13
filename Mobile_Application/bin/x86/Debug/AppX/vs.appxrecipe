@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-01-07T16:23:43.920</Modified>
+      <Modified>2016-01-13T14:25:55.860</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\Mobile_Application.exe">
       <PackagePath>entrypoint\Mobile_Application.exe</PackagePath>
-      <Modified>2016-01-07T16:23:38.985</Modified>
+      <Modified>2016-01-13T14:25:55.234</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
@@ -480,49 +480,49 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
-      <Modified>2015-12-27T16:16:06.956</Modified>
+      <Modified>2016-01-08T13:16:11.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2015-12-27T16:15:45.767</Modified>
+      <Modified>2016-01-08T13:16:17.384</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2015-10-10T20:09:42.000</Modified>
+      <Modified>2016-01-08T13:16:11.019</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T20:09:42.000</Modified>
+      <Modified>2016-01-08T13:16:11.021</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T20:09:42.000</Modified>
+      <Modified>2016-01-08T13:16:11.023</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T20:09:42.000</Modified>
+      <Modified>2016-01-08T13:16:11.025</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T20:09:42.000</Modified>
+      <Modified>2016-01-08T13:16:11.026</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T20:09:42.000</Modified>
+      <Modified>2016-01-08T13:16:11.028</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T20:09:42.000</Modified>
+      <Modified>2016-01-08T13:16:11.029</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\Mobile_Application.xr.xml">
       <PackagePath>Mobile_Application.xr.xml</PackagePath>
-      <Modified>2016-01-07T12:50:23.633</Modified>
+      <Modified>2016-01-08T13:16:17.128</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -530,11 +530,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-01-07T16:23:39.558</Modified>
+      <Modified>2016-01-13T13:52:42.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\bin\x86\Debug\Core\Mobile_Application.exe">
       <PackagePath>Mobile_Application.exe</PackagePath>
-      <Modified>2016-01-07T16:23:43.912</Modified>
+      <Modified>2016-01-13T14:25:55.857</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

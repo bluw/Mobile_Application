@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using Mobile_Application.Model;
 using Mobile_Application.Services;
+using NotificationsExtensions.Toasts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml.Navigation;
 
 namespace Mobile_Application.ViewModel
@@ -23,10 +25,12 @@ namespace Mobile_Application.ViewModel
             _navigationService = navigationService;
         }
 
+
         public void OnNavigatedTo(NavigationEventArgs e)
         {
             personCliked = (Person)e.Parameter;           
         }
+
 
         private async void AddFavorite_Tapped()
         {
@@ -43,13 +47,15 @@ namespace Mobile_Application.ViewModel
                     _navigationService.NavigateTo("FavoriteDetails", personCliked);
                 } else {
                     //show error link already exist
+                    ShowToast("favorite_link_exists");
                 }
     
             } else {
-
-                //show message si il veut sajouter lui meme en favoris
+                //try to add himself in favorite
+                ShowToast("add_himself_favorite");
             }
         }
+
 
         private async void RemoveFavorite_Tapped()
         {
@@ -61,6 +67,26 @@ namespace Mobile_Application.ViewModel
 
             _navigationService.NavigateTo("PersonDetails", personCliked);
         }
+
+
+        public void ShowToast(String value)
+        {
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+
+            ToastVisual visual = new ToastVisual() {
+                TitleText = new ToastText() {
+                    Text = value
+                },
+            };
+
+            ToastContent content = new ToastContent();
+            content.Visual = visual;
+            var toast = new ToastNotification(content.GetXml());
+            ToastNotificationManager.CreateToastNotifier().Show(toast);
+        }
+
+
+        /* Navigation command  & event handling*/
 
         private ICommand _search;
         public ICommand Search

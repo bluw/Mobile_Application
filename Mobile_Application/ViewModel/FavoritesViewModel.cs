@@ -23,16 +23,19 @@ namespace Mobile_Application.ViewModel
             _navigationService = navigationService;
         }
 
+
         public void OnNavigatedTo()
         {
             LoadFavorites();
         }
+
 
         public void Favorite_Click(ItemClickEventArgs e)
         {
             SelectedPerson = (Person)((ItemClickEventArgs)e).ClickedItem;
             _navigationService.NavigateTo("FavoriteDetails", SelectedPerson);
         }
+
 
         private async void LoadFavorites()
         {
@@ -42,27 +45,8 @@ namespace Mobile_Application.ViewModel
             FavoritesList = await service.getFavoritesAsync(email);
         }
 
-        private Person _selectedPerson;
-        public Person SelectedPerson
-        {
-            get { return _selectedPerson; }
-            set
-            {
-                _selectedPerson = value;
-                RaisePropertyChanged("SelectedPerson");
-            }
-        }
 
-        private IEnumerable<Person> _favoritesList;
-        public IEnumerable<Person> FavoritesList
-        {
-            get { return _favoritesList; }
-            set
-            {
-                _favoritesList = value;
-                RaisePropertyChanged("FavoritesList");
-            }
-        }
+        /* Navigation command */
 
         private ICommand _search;
         public ICommand Search
@@ -96,6 +80,30 @@ namespace Mobile_Application.ViewModel
         private void Search_Tapped()
         {
             _navigationService.NavigateTo("SearchPage");
+        }
+
+        /* gettors & settors */
+
+        private Person _selectedPerson;
+        public Person SelectedPerson
+        {
+            get { return _selectedPerson; }
+            set
+            {
+                _selectedPerson = value;
+                RaisePropertyChanged("SelectedPerson");
+            }
+        }
+
+        private IEnumerable<Person> _favoritesList;
+        public IEnumerable<Person> FavoritesList
+        {
+            get { return _favoritesList; }
+            set
+            {
+                _favoritesList = value;
+                RaisePropertyChanged("FavoritesList");
+            }
         }
     }
 }

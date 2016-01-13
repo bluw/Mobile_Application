@@ -26,6 +26,7 @@ namespace Mobile_Application.ViewModel
             _navigationService = navigationService;
         }
 
+
         private async void SignIn_Click()
         {
             if (Email != null && Password != null) {
@@ -41,17 +42,18 @@ namespace Mobile_Application.ViewModel
                     _navigationService.NavigateTo("FavoritePage");
 
                 } else {
-                    //wrong email or password
+                    ShowToast("wrong_email_password");
                 }
+
             } else {
-                ShowToast("please enter email and password");
+                ShowToast("email_password_missing");
             }
         }
 
 
         public void ShowToast(String value)
         {
-            //var loader = 
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
 
             ToastVisual visual = new ToastVisual() {
                 TitleText = new ToastText() {
@@ -64,6 +66,8 @@ namespace Mobile_Application.ViewModel
             var toast = new ToastNotification(content.GetXml());
             ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
+
+        /* Navigation command */
 
         private ICommand _signIn;
         public ICommand SignIn
@@ -93,6 +97,8 @@ namespace Mobile_Application.ViewModel
         {
             _navigationService.NavigateTo("RegisterPage");
         }
+
+        /*gettors & settors */
 
         public bool IsLogged { get; set; }
 

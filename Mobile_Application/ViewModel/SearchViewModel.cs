@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using Mobile_Application.Model;
 using Mobile_Application.Services;
+using NotificationsExtensions.Toasts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Notifications;
 
 namespace Mobile_Application.ViewModel
 {
@@ -22,38 +24,35 @@ namespace Mobile_Application.ViewModel
             _navigationService = navigationService;
         }
 
-        public Boolean ValidateTextBox()
-        {
-            if (_input == null) {
-                return false;
-            }
-
-            return true;
-        }
 
         private async void Search_Click()
         {
-            PersonService service = new PersonService();
-            try {
-                if (EmailChecked) {
-                    var person = await service.getDetailsPersonAsync(Input);
-                    ListPerson[0] = person;
-                } else {
+            if (CanExecute()) {
 
-                    Input = FirstLetterToUpperCase(Input);
+                PersonService service = new PersonService();
 
-                    if (NameChecked) {
-                        ListPerson = await service.searchPersonByNameAsync(Input);
+                try {
+
+                    if (EmailChecked) {
+                        var person = await service.getDetailsPersonAsync(Input);
+                        ListPerson[0] = person;
+
                     } else {
-                        ListPerson = await service.searchPersonByCompanyAsync(Input);    
+
+                        Input = FirstLetterToUpperCase(Input);
+
+                        if (NameChecked) {
+                            ListPerson = await service.searchPersonByNameAsync(Input);
+                        } else {
+                            ListPerson = await service.searchPersonByCompanyAsync(Input);
+                        }
                     }
+
+                    _navigationService.NavigateTo("SearchListPage", ListPerson);
+
+                } catch (Exception e) {
+                    ShowToast("search_not_found");
                 }
-
-                _navigationService.NavigateTo("SearchListPage", ListPerson);
-
-            } catch (Exception e) {
-                //show message search not found
-                
             }
         }
 
@@ -70,26 +69,33 @@ namespace Mobile_Application.ViewModel
             return new string(tabStr);
         }
 
-        public void Company_Checked_change()
+
+        public void ShowToast(String value)
         {
-            CompanyChecked = true;
-            NameChecked = false;
-            EmailChecked = false;
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+
+            ToastVisual visual = new ToastVisual() {
+                TitleText = new ToastText() {
+                    Text = value
+                },
+            };
+
+            ToastContent content = new ToastContent();
+            content.Visual = visual;
+            var toast = new ToastNotification(content.GetXml());
+            ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
 
-        public void Name_Checked_change()
+        public Boolean CanExecute()
         {
-            CompanyChecked = false;
-            NameChecked = true;
-            EmailChecked = false;
+            if (_input == null) {
+                return false;
+            }
+
+            return true;
         }
 
-        public void Email_Checked_change()
-        {
-            CompanyChecked = false;
-            NameChecked = false;
-            EmailChecked = true;
-        }
+        /* Navigation command  & event handling */
 
         private ICommand _search;
         public ICommand Search
@@ -152,8 +158,41 @@ namespace Mobile_Application.ViewModel
             Company_Checked_change();
         }
 
+
+        public void Company_Checked_change()
+        {
+            CompanyChecked = true;
+            NameChecked = false;
+            EmailChecked = false;
+        }
+
+        public void Name_Checked_change()
+        {
+            CompanyChecked = false;
+            NameChecked = true;
+            EmailChecked = false;
+        }
+
+        public void Email_Checked_change()
+        {
+            CompanyChecked = false;
+            NameChecked = false;
+            EmailChecked = true;
+        }
+
+
+        /* gettors & settors */
+
         private string _input;
-        public string Input { get { return _input; } set { _input = value;  } }
+        public string Input
+        {
+            get { return _input; }
+            set
+            {
+                _input = value;
+                RaisePropertyChanged("Input");
+            }
+        }
 
         public bool CompanyChecked { get; set; }
         public bool NameChecked { get; set; }

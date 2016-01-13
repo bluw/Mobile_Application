@@ -15,29 +15,44 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Mobile_Application.ViewModel
 {
-    public class SearchListViewModel : ViewModelBase, INotifyPropertyChanged
+    public class ListViewModel : ViewModelBase, INotifyPropertyChanged
     {
         private INavigationService _navigationService;
 
-        public SearchListViewModel(INavigationService navigationService)
+        public ListViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
         }
 
+        public void OnNavigatedToFavorite()
+        {
+            LoadFavorites();
+        }
 
-        public void OnNavigatedTo(NavigationEventArgs e)
+        public void OnNavigatedToSearch(NavigationEventArgs e)
         {
             IEnumerable<Person> list = (Person[])e.Parameter;
             PeopleList = list;
         }
 
-
-        /* Navigation command & event handling */
-
         public void Person_Click(ItemClickEventArgs e)
         {
             SelectedPerson = (Person)((ItemClickEventArgs)e).ClickedItem;
             _navigationService.NavigateTo("PersonDetails", SelectedPerson);
+        }
+
+        public void Favorite_Click(ItemClickEventArgs e)
+        {
+            SelectedPerson = (Person)((ItemClickEventArgs)e).ClickedItem;
+            _navigationService.NavigateTo("FavoriteDetails", SelectedPerson);
+        }
+
+        private async void LoadFavorites()
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            var email = (string)localSettings.Values["Email"];
+            FavoriteService service = new FavoriteService();
+            PeopleList = await service.getFavoritesAsync(email);
         }
 
         private Person _selectedPerson;
@@ -74,18 +89,6 @@ namespace Mobile_Application.ViewModel
             }
         }
 
-        private ICommand _goFavorite;
-        public ICommand GoFavorite
-        {
-            get
-            {
-                if (_goFavorite == null) {
-                    _goFavorite = new RelayCommand(() => Favorite_Tapped());
-                }
-                return _goFavorite;
-            }
-        }
-
         private ICommand _account;
         public ICommand Account
         {
@@ -95,6 +98,18 @@ namespace Mobile_Application.ViewModel
                     _account = new RelayCommand(() => Account_Tapped());
                 }
                 return _account;
+            }
+        }
+
+        private ICommand _goFavorite;
+        public ICommand GoFavorite
+        {
+            get
+            {
+                if (_goFavorite == null) {
+                    _goFavorite = new RelayCommand(() => Favorite_Tapped());
+                }
+                return _goFavorite;
             }
         }
 
