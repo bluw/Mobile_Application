@@ -1,4 +1,2 @@
-AlternateForm=UNPLATED
-Scale=200
-TargetSize=24
+Scale=100
 Language=EN-US

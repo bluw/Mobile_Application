@@ -10,12 +10,12 @@
     >
 
     <Page.BottomAppBar>
-        <CommandBar  x:Name="appBar">
+        <CommandBar  x:Name="appBar" RenderTransformOrigin="0.503,6.18">
             <AppBarButton x:Name="Back" Icon="Back" Command="{Binding Back}"/>
         </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10">
+    <Grid Style="{StaticResource backgroundStyle}" Margin="0,0,0,-258">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="50"/>

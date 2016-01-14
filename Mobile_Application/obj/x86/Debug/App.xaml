@@ -8,6 +8,20 @@
 
     <Application.Resources>
         <vm:ViewModelLocator x:Key="Locator"/>
+        <Style x:Key="backgroundStyle" TargetType="Grid">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="/Assets/background.png"/> 
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="backgroundStyleStackPanel" TargetType="StackPanel">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="/Assets/background.png"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 
 </Application>

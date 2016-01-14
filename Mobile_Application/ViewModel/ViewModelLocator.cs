@@ -26,6 +26,7 @@ namespace Mobile_Application.ViewModel
             SimpleIoc.Default.Register<ModificationsViewModel>();
 
             NavigationService navigationService = new NavigationService();
+            SimpleIoc.Default.Unregister<INavigationService>();
             SimpleIoc.Default.Register<INavigationService>(() => navigationService);
             navigationService.Configure("LoginPage", typeof(LoginPage));
             navigationService.Configure("RegisterPage", typeof(RegisterPage));
