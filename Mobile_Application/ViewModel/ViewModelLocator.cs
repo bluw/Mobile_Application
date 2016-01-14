@@ -17,12 +17,12 @@ namespace Mobile_Application.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             SimpleIoc.Default.Register<LoginUserViewModel>();
-            SimpleIoc.Default.Register<AddClientViewModel>();
             SimpleIoc.Default.Register<SearchViewModel>();
             SimpleIoc.Default.Register<SearchListViewModel>();
             SimpleIoc.Default.Register<FavoritesViewModel>();
             SimpleIoc.Default.Register<PersonDetailsViewModel>();
             SimpleIoc.Default.Register<AccountViewModel>();
+            SimpleIoc.Default.Register<AddClientViewModel>();
             SimpleIoc.Default.Register<ModificationsViewModel>();
 
             NavigationService navigationService = new NavigationService();
@@ -44,14 +44,6 @@ namespace Mobile_Application.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<LoginUserViewModel>();
-            }
-        }
-
-        public AddClientViewModel Register
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<AddClientViewModel>();
             }
         }
 
@@ -92,6 +84,14 @@ namespace Mobile_Application.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<AccountViewModel>();
+            }
+        }
+
+        public AddClientViewModel Register
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<AddClientViewModel>();
             }
         }
 

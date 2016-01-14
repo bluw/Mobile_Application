@@ -28,23 +28,30 @@
             </AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
+<<<<<<< HEAD
 
     <Grid Style="{StaticResource backgroundStyle}">
+=======
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10">
+>>>>>>> origin/master
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="100"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="380"/>
-        </Grid.ColumnDefinitions>
 
-        <TextBlock Text="{Binding User.LastName}" Grid.Row="1" Grid.Column="0" FontSize="34" />
-        <TextBlock Text="{Binding User.FirstName}" Grid.Row="1" Grid.Column="1" FontSize="34" />
-        <TextBlock Text="{Binding User.Email}" Grid.Row="3" Grid.Column="1"/>
+        <TextBlock Text="{Binding User.LastName}" Grid.Row="0" FontSize="34" />
+        <TextBlock Text="{Binding User.FirstName}" Grid.Row="1" FontSize="34" />
+        <TextBlock Text="{Binding User.Email}" Grid.Row="2" />
+        <TextBlock Text="{Binding User.KeyLength}" Grid.Row="3" />
+        <TextBlock Text="{Binding User.KeyUsed}" Grid.Row="4" />
+        <TextBlock Text="{Binding User.TypeAlgo.Type}" Grid.Row="5" />
+        <TextBlock Text="{Binding User.Company.NameCompany}" Grid.Row="6" />
 
     </Grid>
 </Page>

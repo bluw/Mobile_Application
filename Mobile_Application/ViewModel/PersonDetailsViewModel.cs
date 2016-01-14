@@ -75,7 +75,7 @@ namespace Mobile_Application.ViewModel
 
             ToastVisual visual = new ToastVisual() {
                 TitleText = new ToastText() {
-                    Text = value
+                    Text = loader.GetString(value)
                 },
             };
 
