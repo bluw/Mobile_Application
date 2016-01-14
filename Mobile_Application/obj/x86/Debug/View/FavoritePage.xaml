@@ -10,13 +10,21 @@
     >
 
     <Page.BottomAppBar>
-        <CommandBar x:ConnectionId='1'  x:Name="appBar">
-            <AppBarButton x:ConnectionId='2' x:Name="Account" Icon="Account" Command="{Binding Account}"/>
-            <AppBarButton x:ConnectionId='3' x:Name="Search" Icon="PhoneBook" Command="{Binding Search}"/>
+        <CommandBar x:ConnectionId='1'  x:Name="appBar" >
+            <AppBarButton x:ConnectionId='2' x:Name="Account" Label="Profil" Command="{Binding Account}" >
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Assets/ic_person_outline_white_36dp.png"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton x:ConnectionId='3' x:Name="Search" Label="Search" Command="{Binding Search}">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Assets/ic_magnify_white_36dp.png"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
 
-    <StackPanel x:ConnectionId='4' x:Name="SearchPagePanel"  Background="Gray">
+    <StackPanel x:ConnectionId='4' x:Name="SearchPagePanel"  Style="{StaticResource backgroundStyleStackPanel}">
         <TextBlock Text="Favorites" FontSize="55"/>
         <ListView x:ConnectionId='5' ItemsSource="{Binding FavoritesList}" Margin="10,0,-10,0" SelectedItem="{Binding SelectedPerson}"                                IsItemClickEnabled="True" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.IsVerticalRailEnabled="True">
             <ListView.ItemTemplate>
