@@ -8,8 +8,8 @@
     mc:Ignorable="d"
     DataContext="{Binding Source={StaticResource Locator}, Path=Login}"
     >
- 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10">
+
+    <Grid Style="{StaticResource backgroundStyle}"  >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="50"/>
@@ -30,7 +30,7 @@
         <PasswordBox Password="{Binding Password, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left" />
 
         <Button x:ConnectionId='1' x:Name="SignIn" Command="{Binding SignIn}" Grid.Row="3" Grid.Column="0" Content="Sign in" Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" />
-        <HyperlinkButton Content="Sign up" Command="{Binding SignUp}" Grid.Row="4" Grid.Column="0" Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <Button Content="Sign up" Command="{Binding SignUp}" Grid.Row="3" Grid.Column="1" Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="68,29.667,0,30.333"/>
     </Grid>
 </Page>
 

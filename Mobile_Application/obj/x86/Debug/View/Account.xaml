@@ -11,13 +11,25 @@
 
     <Page.BottomAppBar>
         <CommandBar x:ConnectionId='1'  x:Name="appBar">
-            <AppBarButton x:ConnectionId='2' x:Name="Modification" Icon="Upload" Command="{Binding Modification}"/>
-            <AppBarButton x:ConnectionId='3' x:Name="Search" Icon="PhoneBook" Command="{Binding Search}"/>
-            <AppBarButton x:ConnectionId='4' x:Name="Favorite" Icon="Contact" Command="{Binding GoFavorite}"/>
+            <AppBarButton x:ConnectionId='2' x:Name="Modification" Label="Modification" Command="{Binding Modification}">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Assets/ic_mode_edit_white_36dp.png"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton x:ConnectionId='3' x:Name="Search" Label="Search" Command="{Binding Search}">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Assets/ic_magnify_white_36dp.png"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton x:ConnectionId='4' x:Name="Favorite" Label="Favorite" Command="{Binding GoFavorite}">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Assets/ic_contacts_white_36dp.png"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10">
+    <Grid Style="{StaticResource backgroundStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="50"/>
