@@ -31,5 +31,9 @@ namespace Mobile_Application.View
             ApplicationView.PreferredLaunchViewSize = new Size(480, 800);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            ((LoginUserViewModel)DataContext).OnNavigatedTo();
+        }
     }
 }

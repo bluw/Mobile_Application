@@ -39,8 +39,7 @@ namespace Mobile_Application.ViewModel
                     try {
                         Person newUser = new Person();
                         newUser.Email = Email;
-                        string encryptedPassword = MyCrypt(Password);
-                        newUser.Password = encryptedPassword;
+                        newUser.Password = Password;
                         newUser.FirstName = FirstName;
                         newUser.LastName = LastName;
                         newUser.KeyLength = ConvertKey();
@@ -78,11 +77,7 @@ namespace Mobile_Application.ViewModel
         }
 
 
-        private string MyCrypt(string password)
-        {
-
-            return password;
-        }
+        
 
 
         private string FirstLetterToUpperCase(string str)

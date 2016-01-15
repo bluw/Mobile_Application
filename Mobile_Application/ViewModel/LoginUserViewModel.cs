@@ -26,19 +26,29 @@ namespace Mobile_Application.ViewModel
             _navigationService = navigationService;
         }
 
-
         private async void SignIn_Click()
         {
             if (Email != null && Password != null) {
-
+                var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                
                 LoginService loginService = new LoginService();
+
                 IsLogged = await loginService.VerifiyLoginAsync(Email, Password);
 
                 if (IsLogged) {
-
-                    var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                    
+                    
                     localSettings.Values["Email"] = Email;
-
+                    if (IsRemember)
+                    {
+                        localSettings.Values["isRemember"] = IsRemember;
+                    }
+                    else
+                    {
+                        IsRemember = false;
+                        localSettings.Values["isRemember"] = IsRemember;
+                    }
+                    
                     _navigationService.NavigateTo("FavoritePage");
 
                 } else {
@@ -50,7 +60,33 @@ namespace Mobile_Application.ViewModel
             }
         }
 
+        internal void OnNavigatedTo()
+        {
+            
+            var localSetting = Windows.Storage.ApplicationData.Current.LocalSettings;
+            if(localSetting.Values != null)
+            {
+                if (localSetting.Values["isRemember"] != null)
+                {
+                    bool value = (bool)localSetting.Values["isRemember"];
 
+                    if (value)
+                    {
+                        // ne marche pas
+                        _navigationService.NavigateTo("FavoritePage");
+                    }
+                }
+                if (localSetting.Values["Email"] != null)
+                {
+                    string email = (string)localSetting.Values["Email"];
+                    if (email != null)
+                    {
+                        Email = email;
+                    }
+                }
+            }
+        }
+        
         public void ShowToast(String value)
         {
             var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
@@ -101,7 +137,7 @@ namespace Mobile_Application.ViewModel
         /*gettors & settors */
 
         public bool IsLogged { get; set; }
-
+        public bool IsRemember { get; set; }
         public string Email { get; set; }
 
         public string Password { get; set; }

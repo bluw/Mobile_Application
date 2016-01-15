@@ -1,15 +1,18 @@
-﻿using Mobile_Application.Model;
+﻿using EuropeanChampionshipsUniversal.Encryption;
+using Mobile_Application.Model;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Mobile_Application.Services
 {
     class LoginService
     {
+        
         public async Task<bool> VerifiyLoginAsync(string email, string password)
         {
             HttpClient client = new HttpClient();
@@ -29,9 +32,9 @@ namespace Mobile_Application.Services
 
 
         private string MyCrypt(string password)
-        {
-      
-            return password;
+        { 
+            string cryptPass = PasswordEncryption.cryptPwd(password);
+            return cryptPass;
         }
     }
 }

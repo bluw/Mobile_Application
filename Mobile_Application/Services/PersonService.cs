@@ -1,4 +1,5 @@
-﻿using Mobile_Application.Model;
+﻿using EuropeanChampionshipsUniversal.Encryption;
+using Mobile_Application.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Mobile_Application.Services
         public async Task AddPersonAsync(Person newPerson)
         {
             HttpClient client = new HttpClient();
-
+            newPerson.Password = PasswordEncryption.cryptPwd(newPerson.Password);
             var newPersonJSON = Newtonsoft.Json.JsonConvert.SerializeObject(newPerson);
             HttpContent content = new StringContent(newPersonJSON, Encoding.UTF8, "application/json");
 

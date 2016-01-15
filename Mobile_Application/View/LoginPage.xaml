@@ -8,6 +8,7 @@
     mc:Ignorable="d"
     DataContext="{Binding Source={StaticResource Locator}, Path=Login}"
     >
+    
 
     <Grid Style="{StaticResource backgroundStyle}"  >
         <Grid.RowDefinitions>
@@ -24,12 +25,13 @@
         <TextBlock Text="Login"  Grid.Row="0"  Grid.Column="1" FontSize="34"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
         <TextBlock Text="Email" Grid.Row="1" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-        <TextBox Text="{Binding Email, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox Name="boxEmail" Text="{Binding Email, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left" PlaceholderText="" InputScope="EmailNameOrAddress"/>
 
         <TextBlock Text="Password" Grid.Row="2" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" />
         <PasswordBox Password="{Binding Password, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left" />
 
-        <Button x:Name="SignIn" Command="{Binding SignIn}" Grid.Row="3" Grid.Column="0" Content="Sign in" Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" />
-        <Button Content="Sign up" Command="{Binding SignUp}" Grid.Row="3" Grid.Column="1" Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="68,29.667,0,30.333"/>
+        <Button x:Name="SignIn" Command="{Binding SignIn}" Grid.Row="3" Grid.Column="0" Content="Sign in" Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,23.667,0,36.333" Grid.ColumnSpan="2" />
+        <Button Content="Sign up" Command="{Binding SignUp}" Grid.Row="3" Grid.Column="1" Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="86,23.667,0,36.333"/>
+        <CheckBox  Content="Remember Me"  IsChecked="{Binding IsRemember, Mode=TwoWay}" HorizontalAlignment="Left" Margin="30,78.667,0,-10.667" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" RequestedTheme="Light"/>
     </Grid>
 </Page>
