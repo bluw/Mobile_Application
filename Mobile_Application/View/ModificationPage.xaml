@@ -14,8 +14,8 @@
             <AppBarButton x:Name="Back" Icon="Back" Command="{Binding Back}"/>
         </CommandBar>
     </Page.BottomAppBar>
-
-    <Grid Style="{StaticResource backgroundStyle}">
+    <ScrollViewer HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Hidden" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto">
+    <Grid Style="{StaticResource backgroundStyle}" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.VerticalScrollBarVisibility="Visible">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="50"/>
@@ -35,7 +35,7 @@
             <ColumnDefinition Width="380"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Modify account"  Grid.Row="0"  Grid.Column="1" FontSize="34"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBlock Text="Modify account"  Grid.Row="0"  Grid.ColumnSpan="2" FontSize="34"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,0,0"/>
 
         <TextBlock Text="{Binding FirstName, Mode=TwoWay}" Grid.Row="1" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
@@ -72,4 +72,5 @@
         <Button x:Name="Submit" Command="{Binding Submit}" Grid.Row="10" Grid.Column="1" Content="Update Account" Height="40" Width="160" VerticalAlignment="Center" HorizontalAlignment="Left" />
 
     </Grid>
+    </ScrollViewer>
 </Page>

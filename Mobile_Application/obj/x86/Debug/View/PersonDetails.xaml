@@ -33,30 +33,31 @@
             </AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
-<<<<<<< HEAD
+
     
     <Grid Style="{StaticResource backgroundStyle}">
-=======
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10">
->>>>>>> origin/master
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
 
-        <TextBlock Text="{Binding personCliked.LastName}" Grid.Row="0" FontSize="34" />
-        <TextBlock Text="{Binding personCliked.FirstName}" Grid.Row="1" FontSize="34" />
-        <TextBlock Text="{Binding personCliked.Email}" Grid.Row="2" />
-        <TextBlock Text="{Binding personCliked.KeyLength}" Grid.Row="3" />
-        <TextBlock Text="{Binding personCliked.KeyUsed}" Grid.Row="4" />
-        <TextBlock Text="{Binding personCliked.TypeAlgo.Type}" Grid.Row="5" />
-        <TextBlock Text="{Binding personCliked.Company.NameCompany}" Grid.Row="6" />
+        <TextBlock Text="{Binding personCliked.LastName}" Grid.Row="0" FontSize="34" Margin="10,10,0,0"/>
+        <TextBlock Text="{Binding personCliked.FirstName}" Grid.Row="0" Grid.Column="1" FontSize="34" Margin="10,10,50,0"/>
+        <TextBlock Text="{Binding personCliked.Email}" Grid.Row="2" FontSize="20" Margin="10,10,0,0"/>
+        <TextBlock Text="{Binding personCliked.KeyLength}" Grid.Row="3" FontSize="20" Margin="10,10,0,0"/>
+        <TextBlock Text="{Binding personCliked.KeyUsed}" Grid.Row="4" FontSize="20" Margin="10,10,0,0"/>
+        <TextBlock Text="{Binding personCliked.TypeAlgo.Type}" Grid.Row="5" FontSize="20" Margin="10,10,0,0"/>
+        <TextBlock Text="{Binding personCliked.Company.NameCompany}" Grid.Row="6"  FontSize="20" Margin="10,10,0,0"/>
 
     </Grid>
 </Page>

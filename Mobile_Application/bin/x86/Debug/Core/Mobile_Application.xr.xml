@@ -6,6 +6,12 @@
     <RootPropertyPathName Name="Search" />
     <RootPropertyPathName Name="Modification" />
     <RootPropertyPathName Name="User" />
+    <RootPropertyPathName Name="Company" />
+    <RootPropertyPathName Name="NameCompany" />
+    <RootPropertyPathName Name="TypeAlgo" />
+    <RootPropertyPathName Name="Type" />
+    <RootPropertyPathName Name="KeyUsed" />
+    <RootPropertyPathName Name="KeyLength" />
     <RootPropertyPathName Name="Email" />
     <RootPropertyPathName Name="FirstName" />
     <RootPropertyPathName Name="LastName" />
@@ -16,19 +22,19 @@
     <RootPropertyPathName Name="FavoritesList" />
     <RootPropertyPathName Name="SelectedPerson" />
     <RootPropertyPathName Name="Login" />
+    <RootPropertyPathName Name="IsRemember" />
     <RootPropertyPathName Name="SignUp" />
     <RootPropertyPathName Name="SignIn" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Modifications" />
     <RootPropertyPathName Name="Back" />
-    <RootPropertyPathName Name="Type" />
     <RootPropertyPathName Name="Submit" />
+    <RootPropertyPathName Name="PasswordCheck" />
+    <RootPropertyPathName Name="NewPassword" />
+    <RootPropertyPathName Name="OldPassword" />
     <RootPropertyPathName Name="AlgorithmsList" />
     <RootPropertyPathName Name="SelectedAlgorithm" />
     <RootPropertyPathName Name="CompanyName" />
-    <RootPropertyPathName Name="KeyUsed" />
-    <RootPropertyPathName Name="KeyLength" />
-    <RootPropertyPathName Name="PasswordCheck" />
     <RootPropertyPathName Name="AddFavorite" />
     <RootPropertyPathName Name="Register" />
     <RootPropertyPathName Name="SearchList" />
@@ -53,6 +59,8 @@
       <RootMethod Name="SetColumn" />
       <RootMethod Name="GetRowSpan" />
       <RootMethod Name="SetRowSpan" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Panel">
       <RootProperty Name="Background" />
@@ -117,6 +125,11 @@
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="HorizontalScrollMode" />
+      <RootProperty Name="HorizontalScrollBarVisibility" />
+      <RootProperty Name="VerticalScrollMode" />
+      <RootProperty Name="VerticalScrollBarVisibility" />
+      <RootProperty Name="Content" />
       <RootMethod Name="GetVerticalScrollMode" />
       <RootMethod Name="SetVerticalScrollMode" />
       <RootMethod Name="GetVerticalScrollBarVisibility" />
@@ -129,11 +142,14 @@
     </RootType>
     <RootType FullName="Mobile_Application.View.FavoritePage" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Name" />
       <RootProperty Name="Text" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="InputScope" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Password" />
@@ -150,6 +166,17 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
+      <RootProperty Name="Content" />
+      <RootProperty Name="IsChecked" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="IsDoubleTapEnabled" />
+      <RootProperty Name="IsHoldingEnabled" />
+      <RootProperty Name="IsRightTapEnabled" />
+      <RootProperty Name="RequestedTheme" />
     </RootType>
     <RootType FullName="Mobile_Application.View.LoginPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">

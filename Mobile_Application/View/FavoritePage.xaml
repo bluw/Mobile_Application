@@ -23,7 +23,7 @@
             </AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
-
+    <ScrollViewer HorizontalScrollBarVisibility="Hidden" HorizontalScrollMode="Disabled" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto">
     <StackPanel x:Name="SearchPagePanel"  Style="{StaticResource backgroundStyleStackPanel}">
         <TextBlock Text="Favorites" FontSize="55"/>
         <ListView ItemsSource="{Binding FavoritesList}" Margin="10,0,-10,0" SelectedItem="{Binding SelectedPerson}" ItemClick="Favorite_ItemClick" IsItemClickEnabled="True" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.IsVerticalRailEnabled="True">
@@ -38,12 +38,13 @@
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding LastName}" FontSize="40" Grid.Column="0" Grid.RowSpan="2"></TextBlock>
-                        <TextBlock Text="{Binding FirstName}" Margin ="10,0,0,0" FontSize="12" Grid.Column="1" Grid.Row="0"></TextBlock>
+                        <TextBlock Text="{Binding LastName}" FontSize="20" Grid.Column="0" Grid.RowSpan="2"></TextBlock>
+                        <TextBlock Text="{Binding FirstName}" Margin ="10,10,0,0" FontSize="12" Grid.Column="1" Grid.Row="0"></TextBlock>
                         <TextBlock Text="{Binding Email}" Margin ="10,0,0,0" FontSize="12" Grid.Column="1" Grid.Row="1"></TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackPanel>
+    </ScrollViewer>
 </Page>

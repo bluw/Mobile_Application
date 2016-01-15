@@ -110,6 +110,7 @@
     <Compile Include="Services\AlgorithmService.cs" />
     <Compile Include="Services\FavoriteService.cs" />
     <Compile Include="Services\LoginService.cs" />
+    <Compile Include="Services\PasswordEncryption.cs" />
     <Compile Include="Services\PersonService.cs" />
     <Compile Include="ViewModel\AccountViewModel.cs" />
     <Compile Include="ViewModel\AddClientViewModel.cs" />
