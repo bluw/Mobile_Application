@@ -1,6 +1,8 @@
-﻿using GalaSoft.MvvmLight;
+﻿using Mobile_Application.Encryption;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
+using Mobile_Application.Exceptions;
 using Mobile_Application.Model;
 using Mobile_Application.Services;
 using NotificationsExtensions.Toasts;
@@ -31,14 +33,15 @@ namespace Mobile_Application.ViewModel
         {
             try {
 
-                string encryptedPassword = PasswordManager();
+                string currentPassword = PasswordManager();
 
                 if (CanExecute()) {
 
-                    try {
+                    try
+                    {
                         Person newUser = new Person();
                         newUser.Email = Email;
-                        newUser.Password = encryptedPassword;
+                        newUser.Password = currentPassword;
                         newUser.FirstName = FirstName;
                         newUser.LastName = LastName;
                         newUser.KeyLength = ConvertKey();
@@ -51,7 +54,13 @@ namespace Mobile_Application.ViewModel
 
                         //return to favorite page
                         _navigationService.NavigateTo("FavoritePage");
-                    } catch (Exception e) {
+                    }
+                    catch (NoNetworkException e)
+                    {
+                        ShowToast(e.ToString());
+                    }
+                    catch (Exception e)
+                    {
                         ShowToast(e.ToString());
                     }
                 }
@@ -76,20 +85,17 @@ namespace Mobile_Application.ViewModel
         }
 
 
-        private string MyCrypt(string password)
-        {
-            return password;
-        }
+       
 
 
         private string PasswordManager()
         {
-            string encryptedPassword;
+            string currentPassword;
 
             if (NewPasswordEntered()) {
                 if (EqualsdOldPassword()) {
                     if (EqualsNewPassword()) {
-                        encryptedPassword = MyCrypt(NewPassword);
+                        currentPassword = NewPassword;
                     } else {
                         throw new Exception();
                     }
@@ -98,10 +104,10 @@ namespace Mobile_Application.ViewModel
                 }
 
             } else {
-                encryptedPassword = Password;
+                currentPassword = Password;
             }
 
-            return encryptedPassword;
+            return currentPassword;
         }
 
 
@@ -116,9 +122,9 @@ namespace Mobile_Application.ViewModel
 
         private bool EqualsdOldPassword()
         {
-            string encryptedPasswd = MyCrypt(OldPassword);
+            string encryptedPassword = PasswordEncryption.cryptPwd(OldPassword);
 
-            if (encryptedPasswd.Equals(Password)) {
+            if (encryptedPassword.Equals(Password)) {
                 return true;
             } else {
                 return false;
@@ -158,8 +164,13 @@ namespace Mobile_Application.ViewModel
 
         private async void LoadAlgorithms()
         {
-            AlgorithmService service = new AlgorithmService();
-            AlgorithmsList = await service.GetAlgorithmsAsync();
+            try {
+                AlgorithmService service = new AlgorithmService();
+                AlgorithmsList = await service.GetAlgorithmsAsync();
+            }catch(NoNetworkException e)
+            {
+                ShowToast(e.ToString());
+            }
         }
 
 

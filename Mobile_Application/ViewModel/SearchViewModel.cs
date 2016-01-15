@@ -73,6 +73,9 @@ namespace Mobile_Application.ViewModel
                         ShowToast("emptySearch");
                     }
 
+                }catch (NoNetworkException e)
+                {
+                    ShowToast(e.ToString());
                 }
                 catch (SearchFieldEmpty  searchFieldEmpty)
                 { 

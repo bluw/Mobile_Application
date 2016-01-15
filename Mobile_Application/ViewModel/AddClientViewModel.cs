@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
+using Mobile_Application.Exceptions;
 using Mobile_Application.Model;
 using Mobile_Application.Services;
 using NotificationsExtensions.Toasts;
@@ -33,10 +34,11 @@ namespace Mobile_Application.ViewModel
         private async void RegisterClick()
         {
             if (CanExecute()) {
-
+                
                 if (Password.Equals(PasswordCheck)) {
 
-                    try {
+                    try
+                    {
                         Person newUser = new Person();
                         newUser.Email = Email;
                         newUser.Password = Password;
@@ -49,11 +51,19 @@ namespace Mobile_Application.ViewModel
 
                         PersonService peopleService = new PersonService();
                         await peopleService.AddPersonAsync(newUser);
-
-                        //return to login page
                         _navigationService.NavigateTo("LoginPage");
 
-                    } catch (Exception e) {
+
+
+
+
+                    }
+                    catch (NoNetworkException noNetworkException)
+                    {
+                        ShowToast(noNetworkException.ToString());
+                    }
+                    catch (Exception e)
+                    {
                         ShowToast(e.ToString());
                     }
 
@@ -101,8 +111,13 @@ namespace Mobile_Application.ViewModel
 
         private async void LoadAlgorithms()
         {
-            AlgorithmService service = new AlgorithmService();
-            AlgorithmsList = await service.GetAlgorithmsAsync();
+            try {
+                AlgorithmService service = new AlgorithmService()
+                AlgorithmsList = await service.GetAlgorithmsAsync();
+            }catch(NoNetworkException e)
+            {
+                ShowToast(e.ToString());
+            }
         }
 
 

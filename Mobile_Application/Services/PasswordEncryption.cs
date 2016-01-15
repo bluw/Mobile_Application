@@ -4,7 +4,7 @@ using Windows.Security.Cryptography;
 using Windows.Security.Cryptography.Core;
 using Windows.Storage.Streams;
 
-namespace EuropeanChampionshipsUniversal.Encryption
+namespace Mobile_Application.Encryption
 {
     public class PasswordEncryption
     {
