@@ -33,13 +33,13 @@ namespace Mobile_Application.ViewModel
 
                 try {
 
+                    Input = FirstLetterToUpperCase(Input);
+
                     if (EmailChecked) {
                         var person = await service.getDetailsPersonAsync(Input);
                         ListPerson[0] = person;
 
                     } else {
-
-                        Input = FirstLetterToUpperCase(Input);
 
                         if (NameChecked) {
                             ListPerson = await service.searchPersonByNameAsync(Input);

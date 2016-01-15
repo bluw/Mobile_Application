@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="account" xml:space="preserve">
+    <value>Account</value>
+  </data>
   <data name="add_himself_favorite" xml:space="preserve">
     <value>You cannot add yourself in favorite</value>
     <comment>il essaye de sajouter lui mm en favoris</comment>
@@ -193,6 +196,9 @@
   <data name="people" xml:space="preserve">
     <value>People</value>
   </data>
+  <data name="profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
   <data name="remember_me" xml:space="preserve">
     <value>Remember Me</value>
   </data>
@@ -208,6 +214,9 @@
   </data>
   <data name="sign_up" xml:space="preserve">
     <value>Sign Up</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>Submit</value>
   </data>
   <data name="update" xml:space="preserve">
     <value>Update Account</value>

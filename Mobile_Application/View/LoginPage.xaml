@@ -32,6 +32,6 @@
 
         <Button x:Uid="sign_in" Content="" Command="{Binding SignIn}" Grid.Row="3" Grid.Column="0" Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,23.667,0,36.333" Grid.ColumnSpan="2" />
         <Button x:Uid="sign_up" Content="" Command="{Binding SignUp}" Grid.Row="3" Grid.Column="1" Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="86,23.667,0,36.333"/>
-        <CheckBox x:Uid="remember_me" IsChecked="{Binding IsRemember, Mode=TwoWay}" HorizontalAlignment="Left" Margin="30,78.667,0,-10.667" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" RequestedTheme="Light"/>
+        <CheckBox x:Uid="remember_me" Content="" IsChecked="{Binding IsRemember, Mode=TwoWay}" HorizontalAlignment="Left" Margin="30,78.667,0,-10.667" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" RequestedTheme="Light"/>
     </Grid>
 </Page>

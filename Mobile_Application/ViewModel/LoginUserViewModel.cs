@@ -24,13 +24,6 @@ namespace Mobile_Application.ViewModel
         public LoginUserViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
-            var str_login = loader.GetString("login");
-            var str_email = loader.GetString("email");
-            var str_password = loader.GetString("password");
-            var str_sign_up = loader.GetString("sign_up");
-            var str_sign_in = loader.GetString("sign_in");
-            var str_remember_me = loader.GetString("remember_me");
         }
 
         private async void SignIn_Click()
@@ -43,8 +36,7 @@ namespace Mobile_Application.ViewModel
                 IsLogged = await loginService.VerifiyLoginAsync(Email, Password);
 
                 if (IsLogged) {
-                    
-                    
+                                     
                     localSettings.Values["Email"] = Email;
                     if (IsRemember)
                     {

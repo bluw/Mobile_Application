@@ -168,6 +168,7 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
+      <RootProperty Name="Content" />
       <RootProperty Name="IsChecked" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />

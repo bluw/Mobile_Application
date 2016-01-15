@@ -11,12 +11,12 @@
     
     <Page.BottomAppBar>
         <CommandBar  x:Name="appBar">
-            <AppBarButton x:Name="Account" Label="Profil"  Command="{Binding Account}">
+            <AppBarButton x:Uid="account" x:Name="Account" Label="" Command="{Binding Account}">
                 <AppBarButton.Icon>
                     <BitmapIcon UriSource="ms-appx:///Assets/ic_person_outline_white_36dp.png"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton x:Name="Favorite" Label="Favorite" Command="{Binding GoFavorite}">
+            <AppBarButton x:Uid="favorites" x:Name="Favorite" Label="" Command="{Binding GoFavorite}">
                 <AppBarButton.Icon>
                     <BitmapIcon UriSource="ms-appx:///Assets/ic_contacts_white_36dp.png"/>
                 </AppBarButton.Icon>
@@ -39,14 +39,20 @@
         <TextBlock Text="Search"  Grid.Row="0"  Grid.Column="0" FontSize="34"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
         <StackPanel Grid.Row="1">
-            <RadioButton Name="rb_Name" Checked="rb_Name_Checked">By last name</RadioButton>
-            <RadioButton Name="rb_Email" Checked="rb_Email_Checked">By Email</RadioButton>
-            <RadioButton Name="rb_Company" Checked="rb_Company_Checked">By company</RadioButton>
+            <RadioButton Name="rb_Name" Checked="rb_Name_Checked">
+                <TextBlock x:Uid="by_name" Text=""></TextBlock>
+            </RadioButton>
+            <RadioButton Name="rb_Email" Checked="rb_Email_Checked">
+                <TextBlock x:Uid="by_email" Text=""></TextBlock>
+            </RadioButton>
+            <RadioButton Name="rb_Company" Checked="rb_Company_Checked">
+                <TextBlock x:Uid="by_company" Text=""></TextBlock>
+            </RadioButton>
         </StackPanel>
 
         <TextBox Text="{Binding Input, Mode=TwoWay}" Grid.Row="2" Grid.Column="0" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-        <Button x:Name="Search" Content="Search" Command="{Binding Search}" Grid.Row="4" Grid.Column="0"  Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <Button x:Uid="search" x:Name="Search" Content="" Command="{Binding Search}" Grid.Row="4" Grid.Column="0"  Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" />
    
     </Grid>
 </Page>
