@@ -4,7 +4,7 @@
     <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DeviceId>01B17A49-475E-48D6-BFB2-46C9CE5E8B4C</DeviceId>
+    <DeviceId>98CD6FA8-9114-4179-ACA3-38E5D23C77EE</DeviceId>
     <UseEmulator>true</UseEmulator>
   </PropertyGroup>
 </Project>

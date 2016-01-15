@@ -28,8 +28,8 @@
             </AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
-    
-    <StackPanel x:ConnectionId='5' x:Name="SearchPagePanel"  Style="{StaticResource backgroundStyleStackPanel}">
+    <ScrollViewer HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Hidden" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto">
+        <StackPanel x:ConnectionId='5' x:Name="SearchPagePanel"  Style="{StaticResource backgroundStyleStackPanel}">
         <TextBlock Text="Persons" FontSize="55"/>
         <ListView x:ConnectionId='6' ItemsSource="{Binding PeopleList}" Margin="10,0,-10,0" SelectedItem="{Binding SelectedPerson}"                              IsItemClickEnabled="True" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.IsVerticalRailEnabled="True">
             <ListView.ItemTemplate>
@@ -43,13 +43,14 @@
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding LastName}" FontSize="40" Grid.Column="0" Grid.RowSpan="2"></TextBlock>
-                        <TextBlock Text="{Binding FirstName}" Margin ="10,0,0,0" FontSize="12" Grid.Column="1" Grid.Row="0"></TextBlock>
+                        <TextBlock Text="{Binding LastName}" FontSize="20" Grid.Column="0" Grid.RowSpan="2"></TextBlock>
+                        <TextBlock Text="{Binding FirstName}" Margin ="10,10,0,0" FontSize="12" Grid.Column="1" Grid.Row="0"></TextBlock>
                         <TextBlock Text="{Binding Email}" Margin ="10,0,0,0" FontSize="12" Grid.Column="1" Grid.Row="1"></TextBlock>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackPanel>
+    </ScrollViewer>
 </Page>
 
