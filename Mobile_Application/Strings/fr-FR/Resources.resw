@@ -216,4 +216,13 @@
     <value>L'email ou le mot de passe est incorrecte</value>
     <comment>erreur de login</comment>
   </data>
+  <data name="profile" xml:space="preserve">
+    <value>Compte</value>
+  </data>
+  <data name="account" xml:space="preserve">
+    <value>Compte</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>Soumettre</value>
+  </data>
 </root>

@@ -11,17 +11,17 @@
 
     <Page.BottomAppBar>
         <CommandBar  x:Name="appBar">
-            <AppBarButton x:Name="Account" Label="Profil" Command="{Binding Account}">
+            <AppBarButton x:Uid="account" x:Name="Account" Label="" Command="{Binding Account}">
                 <AppBarButton.Icon>
                     <BitmapIcon UriSource="ms-appx:///Assets/ic_person_outline_white_36dp.png"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton x:Name="Search" Label="Search" Command="{Binding Search}">
+            <AppBarButton x:Uid="search" x:Name="Search" Label="" Command="{Binding Search}">
                 <AppBarButton.Icon>
                     <BitmapIcon UriSource="ms-appx:///Assets/ic_magnify_white_36dp.png"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton x:Name="Favorite" Label="Favorite" Command="{Binding GoFavorite}">
+            <AppBarButton x:Uid="favorites" x:Name="Favorite" Label="" Command="{Binding GoFavorite}">
                 <AppBarButton.Icon>
                     <BitmapIcon UriSource="ms-appx:///Assets/ic_contacts_white_36dp.png"/>
                 </AppBarButton.Icon>
@@ -30,7 +30,7 @@
     </Page.BottomAppBar>
     <ScrollViewer HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Hidden" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto">
         <StackPanel x:Name="SearchPagePanel"  Style="{StaticResource backgroundStyleStackPanel}">
-        <TextBlock Text="Persons" FontSize="55"/>
+        <TextBlock x:Uid="people" Text="" FontSize="55"/>
         <ListView ItemsSource="{Binding PeopleList}" Margin="10,0,-10,0" SelectedItem="{Binding SelectedPerson}" ItemClick="Person_ItemClick" IsItemClickEnabled="True" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.IsVerticalRailEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate>

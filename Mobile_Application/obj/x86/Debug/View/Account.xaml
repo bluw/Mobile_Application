@@ -11,17 +11,17 @@
 
     <Page.BottomAppBar>
         <CommandBar x:ConnectionId='1'  x:Name="appBar">
-            <AppBarButton x:ConnectionId='2' x:Name="Modification" Label="Modification" Command="{Binding Modification}">
+            <AppBarButton x:ConnectionId='2' x:Uid="modify" x:Name="Modification" Label="Modification" Command="{Binding Modification}">
                 <AppBarButton.Icon>
                     <BitmapIcon UriSource="ms-appx:///Assets/ic_mode_edit_white_36dp.png"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton x:ConnectionId='3' x:Name="Search" Label="Search" Command="{Binding Search}">
+            <AppBarButton x:ConnectionId='3' x:Uid="search" x:Name="Search" Label="" Command="{Binding Search}">
                 <AppBarButton.Icon>
                     <BitmapIcon UriSource="ms-appx:///Assets/ic_magnify_white_36dp.png"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton x:ConnectionId='4' x:Name="Favorite" Label="Favorite" Command="{Binding GoFavorite}">
+            <AppBarButton x:ConnectionId='4' x:Uid="favorites" x:Name="Favorite" Label="" Command="{Binding GoFavorite}">
                 <AppBarButton.Icon>
                     <BitmapIcon UriSource="ms-appx:///Assets/ic_contacts_white_36dp.png"/>
                 </AppBarButton.Icon>
@@ -48,10 +48,15 @@
 
         <TextBlock Text="{Binding User.LastName}" Grid.Row="0" FontSize="34" Margin="10,10,0,0" />
         <TextBlock Text="{Binding User.FirstName}" Grid.Row="0" Grid.Column="1" FontSize="34" Margin="10,10,50,0"/>
+        
         <TextBlock Text="{Binding User.Email}" Grid.Row="2" FontSize="20" Margin="10,10,0,0" />
+        
         <TextBlock Text="{Binding User.KeyLength}" Grid.Row="3" FontSize="20" Margin="10,10,0,0"/>
+        
         <TextBlock Text="{Binding User.KeyUsed}" Grid.Row="4" FontSize="20" Margin="10,10,0,0"/>
+        
         <TextBlock Text="{Binding User.TypeAlgo.Type}" Grid.Row="5" FontSize="20" Margin="10,10,0,0"/>
+        
         <TextBlock Text="{Binding User.Company.NameCompany}" Grid.Row="6" FontSize="20" Margin="10,10,0,0"/>
 
     </Grid>

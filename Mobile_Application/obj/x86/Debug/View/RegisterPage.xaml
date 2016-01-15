@@ -35,41 +35,41 @@
             <ColumnDefinition Width="380"/>
         </Grid.ColumnDefinitions>
 
-       
-        <TextBlock Text="Register"  Grid.Row="0"  Grid.Column="1" FontSize="34"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        
-        <TextBlock Text="Email" Grid.Row="1" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+        <TextBlock x:Uid="sign_up" Text=""  Grid.Row="0"  Grid.Column="1" FontSize="34"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <TextBlock x:Uid="email" Text="" Grid.Row="1" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <TextBox Text="{Binding Email, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-        <TextBlock Text="Password" Grid.Row="2" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <TextBlock x:Uid="password"  Text="" Grid.Row="2" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" />
         <PasswordBox Password="{Binding Password, Mode=TwoWay}" Grid.Row="2" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left" />
     
-        <TextBlock Text="Confirm" Grid.Row="3" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <TextBlock x:Uid="confirm" Text="" Grid.Row="3" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" />
         <PasswordBox Password="{Binding PasswordCheck, Mode=TwoWay}" Grid.Row="3" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left" />
 
-        <TextBlock Text="First name" Grid.Row="4" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock x:Uid="first_name" Text="" Grid.Row="4" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <TextBox Text="{Binding FirstName, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-        <TextBlock Text="Last name" Grid.Row="5" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock x:Uid="last_name" Text="" Grid.Row="5" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <TextBox Text="{Binding LastName, Mode=TwoWay}" Grid.Row="5" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-        <TextBlock Text="Key length" Grid.Row="6" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock x:Uid="key_length" Text="" Grid.Row="6" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <TextBox Text="{Binding KeyLength, Mode=TwoWay}" Grid.Row="6" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-        <TextBlock Text="Key used" Grid.Row="7" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock x:Uid="key_used" Text="" Grid.Row="7" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <TextBox Text="{Binding KeyUsed, Mode=TwoWay}" Grid.Row="7" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-        <TextBlock Text="Company" Grid.Row="8" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock x:Uid="company" Text="" Grid.Row="8" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <TextBox Text="{Binding CompanyName, Mode=TwoWay}" Grid.Row="8" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-        <TextBlock Text="Algorithm" Grid.Row="9" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock x:Uid="algorithm" Text="" Grid.Row="9" Grid.Column="0" Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <ComboBox ItemsSource="{Binding AlgorithmsList, Mode=OneWay}" 
                   DisplayMemberPath="Type"
                   SelectedValue="{Binding SelectedAlgorithm, Mode=TwoWay}"
                   SelectedValuePath="Type" 
                   Grid.Row="9" Grid.Column="1" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-        <Button x:ConnectionId='3' x:Name="Register"  Command="{Binding Submit}" Grid.Row="10" Grid.Column="0" Content="Register" Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <Button x:ConnectionId='3' x:Uid="sign_up" x:Name="Register"  Command="{Binding Submit}" Grid.Row="10" Grid.Column="0" Content="" Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" />
 
     </Grid>
 </Page>
