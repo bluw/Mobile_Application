@@ -1,8 +1,10 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
+using Mobile_Application.Exceptions;
 using Mobile_Application.Model;
 using Mobile_Application.Services;
+using NotificationsExtensions.Toasts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml.Controls;
 
 namespace Mobile_Application.ViewModel 
@@ -42,9 +45,30 @@ namespace Mobile_Application.ViewModel
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             var email = (string)localSettings.Values["Email"];
             FavoriteService service = new FavoriteService();
-            FavoritesList = await service.getFavoritesAsync(email);
+            try {
+                FavoritesList = await service.getFavoritesAsync(email);
+            }catch (NoNetworkException e)
+            {
+                ShowToast(e.ToString());
+            }
         }
+        public void ShowToast(String value)
+        {
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
 
+            ToastVisual visual = new ToastVisual()
+            {
+                TitleText = new ToastText()
+                {
+                    Text = loader.GetString(value)
+                },
+            };
+
+            ToastContent content = new ToastContent();
+            content.Visual = visual;
+            var toast = new ToastNotification(content.GetXml());
+            ToastNotificationManager.CreateToastNotifier().Show(toast);
+        }
 
         /* Navigation command */
 

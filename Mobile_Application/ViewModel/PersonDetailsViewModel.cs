@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
+using Mobile_Application.Exceptions;
 using Mobile_Application.Model;
 using Mobile_Application.Services;
 using NotificationsExtensions.Toasts;
@@ -40,21 +41,26 @@ namespace Mobile_Application.ViewModel
             FavoriteService service = new FavoriteService();
 
             if (email != personCliked.Email) {
- 
-                bool isCreated = await service.AddFavoriteAsync(email, personCliked.Email);
-                
-                if (isCreated) {
-                    _navigationService.NavigateTo("FavoriteDetails", personCliked);
-                } else {
-                    //show error link already exist
-                    ShowToast("favorite_link_exists");
+                try {
+                    bool isCreated = await service.AddFavoriteAsync(email, personCliked.Email);
+
+                    if (isCreated) {
+                        _navigationService.NavigateTo("FavoriteDetails", personCliked);
+                    } else {
+                        //show error link already exist
+                        ShowToast("favorite_link_exists");
+                    }
+
+                } catch (NoNetworkException e) {
+                    ShowToast(e.ToString());
                 }
-    
-            } else {
+
+            }
+            else
+            {
                 //try to add himself in favorite
                 ShowToast("add_himself_favorite");
             }
-        }
 
 
         private async void RemoveFavorite_Tapped()
@@ -63,9 +69,14 @@ namespace Mobile_Application.ViewModel
             var email = (string)localSettings.Values["Email"];
 
             FavoriteService service = new FavoriteService();
-            await service.RemoveFavoriteAsync(email, personCliked.Email);
+            try {
+                await service.RemoveFavoriteAsync(email, personCliked.Email);
 
-            _navigationService.NavigateTo("PersonDetails", personCliked);
+                _navigationService.NavigateTo("PersonDetails", personCliked);
+            }catch (NoNetworkException e)
+            {
+                ShowToast(e.ToString());
+            }
         }
 
 

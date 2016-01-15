@@ -255,4 +255,7 @@
   <data name="sign_upText.Text" xml:space="preserve">
     <value>Sign up</value>
   </data>
+  <data name="noNetwork" xml:space="preserve">
+    <value>Please reconnect to Internet</value>
+  </data>
 </root>

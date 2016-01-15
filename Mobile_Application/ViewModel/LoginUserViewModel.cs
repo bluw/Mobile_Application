@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
+using Mobile_Application.Exceptions;
 using Mobile_Application.Services;
 using NotificationsExtensions.Toasts;
 using System;
@@ -30,31 +31,42 @@ namespace Mobile_Application.ViewModel
         {
             if (Email != null && Password != null) {
                 var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-                
+
                 LoginService loginService = new LoginService();
+                try
+                {
+                    IsLogged = await loginService.VerifiyLoginAsync(Email, Password);
 
-                IsLogged = await loginService.VerifiyLoginAsync(Email, Password);
-
-                if (IsLogged) {
-                                     
-                    localSettings.Values["Email"] = Email;
-                    if (IsRemember)
+                    if (IsLogged)
                     {
-                        localSettings.Values["isRemember"] = IsRemember;
+
+                        localSettings.Values["Email"] = Email;
+                        if (IsRemember)
+                        {
+                            localSettings.Values["isRemember"] = IsRemember;
+                        }
+                        else
+                        {
+                            IsRemember = false;
+                            localSettings.Values["isRemember"] = IsRemember;
+                        }
+
+                        _navigationService.NavigateTo("FavoritePage");
+
                     }
                     else
                     {
-                        IsRemember = false;
-                        localSettings.Values["isRemember"] = IsRemember;
+                        ShowToast("wrong_email_password");
                     }
-                    
-                    _navigationService.NavigateTo("FavoritePage");
 
-                } else {
-                    ShowToast("wrong_email_password");
                 }
-
-            } else {
+                catch (NoNetworkException e)
+                {
+                    ShowToast(e.ToString());
+                }
+            }
+            else
+            {
                 ShowToast("email_password_missing");
             }
         }
