@@ -116,17 +116,9 @@
     </RootType>
     <RootType FullName="Mobile_Application.View.Account" />
     <RootType FullName="Mobile_Application.View.FavoriteDetails" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
-      <RootProperty Name="ItemsSource" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="SelectedItem" />
-      <RootProperty Name="IsItemClickEnabled" />
-      <RootProperty Name="ItemTemplate" />
-      <RootEvent Name="ItemClick" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="HorizontalScrollMode" />
       <RootProperty Name="HorizontalScrollBarVisibility" />
+      <RootProperty Name="HorizontalScrollMode" />
       <RootProperty Name="VerticalScrollMode" />
       <RootProperty Name="VerticalScrollBarVisibility" />
       <RootProperty Name="Content" />
@@ -136,6 +128,14 @@
       <RootMethod Name="SetVerticalScrollBarVisibility" />
       <RootMethod Name="GetIsVerticalRailEnabled" />
       <RootMethod Name="SetIsVerticalRailEnabled" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="SelectedItem" />
+      <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="ItemTemplate" />
+      <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
@@ -159,8 +159,8 @@
       <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Command" />
       <RootProperty Name="Content" />
+      <RootProperty Name="Command" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="VerticalAlignment" />
@@ -168,7 +168,6 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
-      <RootProperty Name="Content" />
       <RootProperty Name="IsChecked" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />

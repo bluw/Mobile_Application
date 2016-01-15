@@ -121,6 +121,27 @@
     <value>You cannot add yourself in favorite</value>
     <comment>il essaye de sajouter lui mm en favoris</comment>
   </data>
+  <data name="algorithm" xml:space="preserve">
+    <value>Algorithm</value>
+  </data>
+  <data name="by_company" xml:space="preserve">
+    <value>By company</value>
+  </data>
+  <data name="by_email" xml:space="preserve">
+    <value>By email</value>
+  </data>
+  <data name="by_lastname" xml:space="preserve">
+    <value>By last name</value>
+  </data>
+  <data name="comfirm" xml:space="preserve">
+    <value>Comfirm</value>
+  </data>
+  <data name="company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="email_password_missing" xml:space="preserve">
     <value>Please enter an email and a password</value>
     <comment>il a pas entrer demail ou password</comment>
@@ -128,6 +149,9 @@
   <data name="errorNomPrenom" xml:space="preserve">
     <value>The Name or Firstname isn't one</value>
     <comment>exception sur la forme du nom et prénom</comment>
+  </data>
+  <data name="favorites" xml:space="preserve">
+    <value>Favorites</value>
   </data>
   <data name="favorite_link_exists" xml:space="preserve">
     <value>You already have this person as favorite</value>
@@ -137,6 +161,21 @@
     <value>the size of the key is too short or match an too older size of key</value>
     <comment>exception keylength trop petit</comment>
   </data>
+  <data name="key_length" xml:space="preserve">
+    <value>Key Length</value>
+  </data>
+  <data name="key_used" xml:space="preserve">
+    <value>Key Used</value>
+  </data>
+  <data name="modify" xml:space="preserve">
+    <value>Modifications</value>
+  </data>
+  <data name="modify_account" xml:space="preserve">
+    <value>Modify Account</value>
+  </data>
+  <data name="new_password" xml:space="preserve">
+    <value>New Password</value>
+  </data>
   <data name="notAMailAdress" xml:space="preserve">
     <value>the mail adress you enter is not a mail adress</value>
     <comment>erreur email ne contient pas @ &amp; .</comment>
@@ -145,9 +184,33 @@
     <value>The two passwords are differents </value>
     <comment>il a tapper un password different du password checking</comment>
   </data>
+  <data name="old_passord" xml:space="preserve">
+    <value>Old Password</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="people" xml:space="preserve">
+    <value>People</value>
+  </data>
+  <data name="remember_me" xml:space="preserve">
+    <value>Remember Me</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search</value>
+  </data>
   <data name="search_not_found" xml:space="preserve">
     <value>The request was not found</value>
     <comment>recherche na pas trouver avec ses criteres</comment>
+  </data>
+  <data name="sign_in" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="sign_up" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="update" xml:space="preserve">
+    <value>Update Account</value>
   </data>
   <data name="wrong_email_password" xml:space="preserve">
     <value>The email or password is not correct</value>

@@ -1,1 +1,1 @@
-D:\cours\ig3_cours\environnement de dévelopement logiciel\Mobile_Application\Mobile_Application\Mobile_Application.csproj;x86
+C:\Users\admin\Documents\Visual Studio 2015\Projects\Mobile_Application_2\Mobile_Application\Mobile_Application.csproj;x86
