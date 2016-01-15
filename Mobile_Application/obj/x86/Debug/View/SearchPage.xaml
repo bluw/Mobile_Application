@@ -36,11 +36,11 @@
             <ColumnDefinition Width="300"/>
             <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Search"  Grid.Row="0"  Grid.Column="0" FontSize="34"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBlock x:Uid="searchText" Text=""  Grid.Row="0"  Grid.Column="0" FontSize="34"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
         <StackPanel Grid.Row="1">
             <RadioButton x:ConnectionId='6' Name="rb_Name"                          >
-                <TextBlock x:Uid="by_name" Text=""></TextBlock>
+                <TextBlock x:Uid="by_lastname" Text=""></TextBlock>
             </RadioButton>
             <RadioButton x:ConnectionId='7' Name="rb_Email"                           >
                 <TextBlock x:Uid="by_email" Text=""></TextBlock>
@@ -52,7 +52,7 @@
 
         <TextBox Text="{Binding Input, Mode=TwoWay}" Grid.Row="2" Grid.Column="0" Height="40" Width="300" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
-        <Button x:ConnectionId='5' x:Uid="search" x:Name="Search" Content="" Command="{Binding Search}" Grid.Row="4" Grid.Column="0"  Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <Button x:ConnectionId='5' x:Uid="searchContent" x:Name="Search" Content="" Command="{Binding Search}" Grid.Row="4" Grid.Column="0"  Height="40" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" />
    
     </Grid>
 </Page>

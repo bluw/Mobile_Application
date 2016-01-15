@@ -25,7 +25,7 @@
     </Page.BottomAppBar>
     <ScrollViewer HorizontalScrollBarVisibility="Hidden" HorizontalScrollMode="Disabled" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto">
     <StackPanel x:Name="SearchPagePanel" Style="{StaticResource backgroundStyleStackPanel}">
-        <TextBlock x:Uid="favorites" Text="" FontSize="55"/>
+        <TextBlock x:Uid="favoritesText" Text="" FontSize="55"/>
         <ListView ItemsSource="{Binding FavoritesList}" Margin="10,0,-10,0" SelectedItem="{Binding SelectedPerson}" ItemClick="Favorite_ItemClick" IsItemClickEnabled="True" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.IsVerticalRailEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
