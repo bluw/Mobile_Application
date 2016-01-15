@@ -102,6 +102,7 @@
     </Compile>
     <Compile Include="Exceptions\EmailException.cs" />
     <Compile Include="Exceptions\ErrorNomException.cs" />
+    <Compile Include="Exceptions\SearchFieldEmpty.cs" />
     <Compile Include="Exceptions\SizeOfKeyException.cs" />
     <Compile Include="Model\Algorithm.cs" />
     <Compile Include="Model\Company.cs" />

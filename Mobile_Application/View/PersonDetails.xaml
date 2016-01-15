@@ -26,7 +26,7 @@
                     <BitmapIcon UriSource="ms-appx:///Assets/ic_contacts_white_36dp.png"/>
                 </AppBarButton.Icon>
             </AppBarButton>
-            <AppBarButton x:Name="AddPerson" Command="{Binding AddFavorite}">
+            <AppBarButton x:Uid="addFavorite" x:Name="AddPerson" Label="" Command="{Binding AddFavorite}">
                 <AppBarButton.Icon>
                     <BitmapIcon UriSource="ms-appx:///Assets/ic_account_plus_white_36dp.png"/>
                 </AppBarButton.Icon>

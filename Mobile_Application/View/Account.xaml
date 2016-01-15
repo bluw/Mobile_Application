@@ -11,7 +11,7 @@
 
     <Page.BottomAppBar>
         <CommandBar  x:Name="appBar">
-            <AppBarButton x:Uid="modify" x:Name="Modification" Label="Modification" Command="{Binding Modification}">
+            <AppBarButton x:Uid="modify" x:Name="Modification" Label="" Command="{Binding Modification}">
                 <AppBarButton.Icon>
                     <BitmapIcon UriSource="ms-appx:///Assets/ic_mode_edit_white_36dp.png"/>
                 </AppBarButton.Icon>

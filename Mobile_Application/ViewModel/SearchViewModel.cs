@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
+using Mobile_Application.Exceptions;
 using Mobile_Application.Model;
 using Mobile_Application.Services;
 using NotificationsExtensions.Toasts;
@@ -31,26 +32,54 @@ namespace Mobile_Application.ViewModel
 
                 PersonService service = new PersonService();
 
-                try {
+                try
+                {
 
                     Input = FirstLetterToUpperCase(Input);
 
-                    if (EmailChecked) {
+                    if (EmailChecked)
+                    {
                         var person = await service.getDetailsPersonAsync(Input);
                         ListPerson[0] = person;
 
-                    } else {
+                    }
+                    else
+                    {
 
-                        if (NameChecked) {
+                        if (NameChecked)
+                        {
                             ListPerson = await service.searchPersonByNameAsync(Input);
-                        } else {
-                            ListPerson = await service.searchPersonByCompanyAsync(Input);
+                        }
+                        else
+                        {
+                            if (CompanyChecked)
+                            {
+                                ListPerson = await service.searchPersonByCompanyAsync(Input);
+                            }
+                            else
+                            {
+                                var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+                                string str = loader.GetString("searchEmptyString");
+                                throw new SearchFieldEmpty(str);
+                            }
                         }
                     }
+                    if (ListPerson.Length != 0)
+                    {
+                        _navigationService.NavigateTo("SearchListPage", ListPerson);
+                    }
+                    else
+                    {
+                        ShowToast("emptySearch");
+                    }
 
-                    _navigationService.NavigateTo("SearchListPage", ListPerson);
-
-                } catch (Exception e) {
+                }
+                catch (SearchFieldEmpty  searchFieldEmpty)
+                { 
+                    ShowToast(searchFieldEmpty.toString());
+                }
+                catch (Exception e)
+                {
                     ShowToast("search_not_found");
                 }
             }
@@ -89,7 +118,10 @@ namespace Mobile_Application.ViewModel
         public Boolean CanExecute()
         {
             if (_input == null) {
-                return false;
+                if (_companyChecked == false && _emailChecked == false && _nameChecked == false)
+                {
+                    return false;
+                }
             }
 
             return true;
@@ -193,10 +225,33 @@ namespace Mobile_Application.ViewModel
                 RaisePropertyChanged("Input");
             }
         }
-
-        public bool CompanyChecked { get; set; }
-        public bool NameChecked { get; set; }
-        public bool EmailChecked { get; set; }
+        private bool _companyChecked;
+        private bool _nameChecked;
+        private bool _emailChecked;
+        public bool CompanyChecked {
+            get { return _companyChecked; }
+            set
+            {
+                _companyChecked = value;
+                RaisePropertyChanged("CompanyChecked");
+            }
+        }
+        public bool NameChecked {
+            get { return _nameChecked; }
+            set
+            {
+                _nameChecked = value;
+                RaisePropertyChanged("NameChecked");
+            }
+        }
+        public bool EmailChecked {
+            get { return _emailChecked; }
+            set
+            {
+                _emailChecked = value;
+                RaisePropertyChanged("EmailChecked");
+            }
+        }
 
         public Person[] ListPerson { get; set; }
     }

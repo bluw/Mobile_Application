@@ -117,32 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="account" xml:space="preserve">
+  <data name="account.Label" xml:space="preserve">
     <value>Account</value>
   </data>
   <data name="add_himself_favorite" xml:space="preserve">
     <value>You cannot add yourself in favorite</value>
     <comment>il essaye de sajouter lui mm en favoris</comment>
   </data>
-  <data name="algorithm" xml:space="preserve">
+  <data name="algorithm.Text" xml:space="preserve">
     <value>Algorithm</value>
   </data>
-  <data name="by_company" xml:space="preserve">
+  <data name="by_company.Text" xml:space="preserve">
     <value>By company</value>
   </data>
-  <data name="by_email" xml:space="preserve">
+  <data name="by_email.Text" xml:space="preserve">
     <value>By email</value>
   </data>
-  <data name="by_lastname" xml:space="preserve">
+  <data name="by_lastname.Text" xml:space="preserve">
     <value>By last name</value>
   </data>
-  <data name="comfirm" xml:space="preserve">
+  <data name="confirm.Text" xml:space="preserve">
     <value>Comfirm</value>
   </data>
-  <data name="company" xml:space="preserve">
+  <data name="company.Text" xml:space="preserve">
     <value>Company</value>
   </data>
-  <data name="email" xml:space="preserve">
+  <data name="email.Text" xml:space="preserve">
     <value>Email</value>
   </data>
   <data name="email_password_missing" xml:space="preserve">
@@ -153,7 +153,7 @@
     <value>The Name or Firstname isn't one</value>
     <comment>exception sur la forme du nom et prénom</comment>
   </data>
-  <data name="favorites" xml:space="preserve">
+  <data name="favorites.Label" xml:space="preserve">
     <value>Favorites</value>
   </data>
   <data name="favorite_link_exists" xml:space="preserve">
@@ -164,19 +164,19 @@
     <value>the size of the key is too short or match an too older size of key</value>
     <comment>exception keylength trop petit</comment>
   </data>
-  <data name="key_length" xml:space="preserve">
+  <data name="key_length.Text" xml:space="preserve">
     <value>Key Length</value>
   </data>
-  <data name="key_used" xml:space="preserve">
+  <data name="key_used.Text" xml:space="preserve">
     <value>Key Used</value>
   </data>
-  <data name="modify" xml:space="preserve">
+  <data name="modify.Label" xml:space="preserve">
     <value>Modifications</value>
   </data>
-  <data name="modify_account" xml:space="preserve">
+  <data name="modify_account.Text" xml:space="preserve">
     <value>Modify Account</value>
   </data>
-  <data name="new_password" xml:space="preserve">
+  <data name="new_password.Text" xml:space="preserve">
     <value>New Password</value>
   </data>
   <data name="notAMailAdress" xml:space="preserve">
@@ -187,42 +187,72 @@
     <value>The two passwords are differents </value>
     <comment>il a tapper un password different du password checking</comment>
   </data>
-  <data name="old_passord" xml:space="preserve">
+  <data name="old_password.Text" xml:space="preserve">
     <value>Old Password</value>
   </data>
-  <data name="password" xml:space="preserve">
+  <data name="password.Text" xml:space="preserve">
     <value>Password</value>
   </data>
-  <data name="people" xml:space="preserve">
+  <data name="people.Text" xml:space="preserve">
     <value>People</value>
   </data>
   <data name="profile" xml:space="preserve">
     <value>Profile</value>
   </data>
-  <data name="remember_me" xml:space="preserve">
+  <data name="remember_me.Content" xml:space="preserve">
     <value>Remember Me</value>
   </data>
-  <data name="search" xml:space="preserve">
+  <data name="search.Label" xml:space="preserve">
     <value>Search</value>
   </data>
   <data name="search_not_found" xml:space="preserve">
     <value>The request was not found</value>
     <comment>recherche na pas trouver avec ses criteres</comment>
   </data>
-  <data name="sign_in" xml:space="preserve">
+  <data name="sign_in.Content" xml:space="preserve">
     <value>Sign In</value>
   </data>
-  <data name="sign_up" xml:space="preserve">
+  <data name="sign_up.Content" xml:space="preserve">
     <value>Sign Up</value>
   </data>
   <data name="submit" xml:space="preserve">
     <value>Submit</value>
   </data>
-  <data name="update" xml:space="preserve">
+  <data name="update.Content" xml:space="preserve">
     <value>Update Account</value>
   </data>
   <data name="wrong_email_password" xml:space="preserve">
     <value>The email or password is not correct</value>
     <comment>erreur de login</comment>
+  </data>
+  <data name="addFavorite.Label" xml:space="preserve">
+    <value>Add favorite</value>
+  </data>
+  <data name="favorite.Text" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="favoritesText.Text" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="first_name.Text" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="last_name.Text" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="login.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="removeFavorite.Label" xml:space="preserve">
+    <value>Remove favorite</value>
+  </data>
+  <data name="searchContent.Content" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="searchText.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="sign_upText.Text" xml:space="preserve">
+    <value>Sign up</value>
   </data>
 </root>

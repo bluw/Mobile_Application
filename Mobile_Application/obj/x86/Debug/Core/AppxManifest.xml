@@ -19,6 +19,7 @@
   </Dependencies>
   <Resources>
     <Resource Language="EN-US" />
+    <Resource Language="FR-FR" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="Mobile_Application.exe" EntryPoint="Mobile_Application.App">
